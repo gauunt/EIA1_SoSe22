@@ -94,10 +94,10 @@ li{
 
 .footer1{
     float: left;
-    width: 33, 33%;
+    width: 200px;
     height: 100px;
     margin-right: 2%;
-    padding: 60px;
+    padding: 35px;
     background: #eaeaea;
 }
 
@@ -112,10 +112,10 @@ li{
 
 .footer3{
     float: right;
-    width: 33, 33%;
+    width: 200px;
     height: 100px;
     margin-right: 2%;
-    padding: 60px;
+    padding: 35px;
     background: #eaeaea;  
 }
 
