@@ -6,7 +6,7 @@ h1{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-h5{
+h2{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -102,7 +102,7 @@ li{
     height: 100px;
     margin-right: 2%;
     padding: 60px;
-    background: rgb(155, 162, 179);
+    background: #eaeaea;
 }
 
 .footer2{
@@ -111,7 +111,7 @@ li{
     height: 100px;
     margin-right: 2%;
     padding: 60px;
-    background: rgb(155, 162, 179);   
+    background: #eaeaea;   
 }
 
 .footer3{
@@ -120,7 +120,7 @@ li{
     height: 100px;
     margin-right: 2%;
     padding: 60px;
-    background: rgb(155, 162, 179);  
+    background: #eaeaea;  
 }
 
 .containermain{
@@ -134,4 +134,8 @@ li{
     position: relative;
     top: 0;
     bottom: 0;
+}
+
+footer{
+    background-color: #eaeaea;
 }
