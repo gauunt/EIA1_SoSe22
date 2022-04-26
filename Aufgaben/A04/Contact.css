@@ -94,10 +94,23 @@ li{
 
 input{
     background-color: rgb(172, 172, 172);
+    color: white;
+    width: 300px;
 }
 
 textarea{
     background-color: rgb(172, 172, 172);
+    color: white;
+    width: 500px;
+}
+
+::placeholder{
+    color: white;
+}
+
+.button{
+    color: white;
+    width: 100px;
 }
 
 .footer1{
