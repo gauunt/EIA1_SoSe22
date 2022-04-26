@@ -14,6 +14,10 @@ p{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.logo{
+    margin: 2px;
+}
+
 header{
     background-image: url(../A04/Portfolioinhalt/Hintergrund.PNG);
     width: 100%;
