@@ -92,6 +92,14 @@ li{
     vertical-align: middle;
 }
 
+input{
+    background-color: rgb(172, 172, 172);
+}
+
+textarea{
+    background-color: rgb(172, 172, 172);
+}
+
 .footer1{
     float: left;
     width: 33, 33%;
