@@ -10,12 +10,11 @@ h2{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-p{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
 .logo{
-    margin: 2px;
+    width: 350px;;
+    height: 300px;;
+    left: 330px;
+    position: absolute;
 
 }
 
@@ -101,31 +100,8 @@ li{
     vertical-align: middle;
 }
 
-.footer1{
-    float: left;
-    width: 200px;
-    height: 100px;
-    margin-right: 2%;
-    padding: 35px;
-    background: #eaeaea;
-}
-
-.footer2{
-    float: none;
-    width:33, 33%;
-    height: 100px;
-    margin-right: 2%;
-    padding: 60px;
-    background: #eaeaea;   
-}
-
-.footer3{
-    float: right;
-    width: 200px;
-    height: 100px;
-    margin-right: 2%;
-    padding: 35px;
-    background: #eaeaea;  
+footer{
+    background-color: #eaeaea;
 }
 
 .containermain{
