@@ -84,6 +84,8 @@ transition: color 0.1s, background-color 0.1s;
 
 .linkactive{
     color: grey;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
 }
 
 .link:hover::before, .link:focus::before{
