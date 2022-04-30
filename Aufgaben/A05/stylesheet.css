@@ -52,7 +52,7 @@ header{
 @keyframes slideshow{
     0% {background-image: url(Hintergund.PNG);}
     
-    50% {background-image: url(häuserbunt.jpg);}
+    50% {background-image: url(häuserbunt.JPG);}
     
     100% {background-image: url(kaktus.jpeg);}
     }
