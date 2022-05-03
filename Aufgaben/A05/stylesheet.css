@@ -41,7 +41,7 @@ header{
 
     justify-content: space-between;
     animation-name: slideshow;
-    animation-duration: 30s;
+    animation-duration: 20s;
     animation-iteration-count: infinite;
     background-image: url(Hintergrund.PNG);
     background-size: cover;
@@ -51,11 +51,11 @@ header{
 }
 
 @keyframes slideshow{
-    0% {background-image: url(Hintergund.PNG);}
+    0% {background-image: url(../A05/Portfolioinhalt/Hintergrund.PNG);}
     
-    50% {background-image: url(häuserbunt.JPG);}
+    50% {background-image: url(../A05/Portfolioinhalt/häuserbunt.JPG);}
     
-    100% {background-image: url(kaktus.jpeg);}
+    100% {background-image: url(../A05/Portfolioinhalt/kaktus.jpeg);}
     }
 
 .link {
