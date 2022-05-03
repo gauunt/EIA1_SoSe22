@@ -10,7 +10,7 @@
     right: -320px;
     transform: rotate(35deg);
 
-    z-index: auto;
+    z-index: 1;
 }
 
 ul{
