@@ -2,6 +2,7 @@ var deutschland_einwohnerzahl: number= 83.2;
 var frankreich_einwohnerzahl: number= 65.3;
 var italien_einwohnerzahl: number= 59.58;
 var schweden_einwohnerzahl: number= 10.61;
+var eu_einwohnerzahl: number= 447.01;
 
 var mio: string= " Mio.";
 
@@ -9,6 +10,7 @@ var frankreich: string= "Frankreich ";
 var deutschland: string= "Deuschland ";
 var italien: string= "Italien ";
 var schweden: string= "Schweden ";
+var eu: string= "EU "
 
 var before: string= "Einwohner*innen in ";
 
@@ -16,6 +18,7 @@ console.log(before+deutschland+deutschland_einwohnerzahl+mio);
 console.log(before+frankreich+frankreich_einwohnerzahl+mio);
 console.log(before+italien+italien_einwohnerzahl+mio);
 console.log(before+schweden+schweden_einwohnerzahl+mio);
+console.log(before+eu+eu_einwohnerzahl+mio);
 
 
 var beforerelation: string= "Relation zur Gesamtzahl der Einwohner*innen in der EU "
@@ -28,7 +31,6 @@ console.log(beforerelation+deutschland+deutschland_einwohnerzahl/eubuerger*hunde
 console.log(beforerelation+frankreich+frankreich_einwohnerzahl/eubuerger*hundert+prozent);
 console.log(beforerelation+italien+italien_einwohnerzahl/eubuerger*hundert+prozent);
 console.log(beforerelation+schweden+schweden_einwohnerzahl/eubuerger*hundert+prozent);
-
 
 var beforewachstum: string= "Wachstumsrate seit 2008 "
 
@@ -102,3 +104,16 @@ function clickschweden(){
     document.querySelector(".zahl3").innerHTML= String(((schweden_einwohnerzahl-schweden2008)/schweden2008)*hundert+prozent)
     document.querySelector(".zahl4").innerHTML= String((schweden_einwohnerzahl-schweden2008)+mio)
 };
+
+
+window.addEventListener('load', function(){
+    this.document.querySelector(".eu_stars").addEventListener('click', clickstars)
+})
+
+function clickstars(){
+    document.querySelector(".einwohnerges").innerHTML="Gesamtzahl Einwohner*innen in der EU 2021";
+    document.querySelector(".zahl1").innerHTML= String();
+    document.querySelector(".zahl2").innerHTML= String();
+    document.querySelector(".zahl3").innerHTML= String();
+    document.querySelector(".zahl4").innerHTML= String();
+}
