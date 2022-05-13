@@ -39,8 +39,8 @@ window.addEventListener('load', function () {
     console.log(beforegesamt + frankreich + (frankreich_einwohnerzahl - frankreich2008) + mio);
     console.log(beforegesamt + italien + (italien_einwohnerzahl - italien2008) + mio);
     console.log(beforegesamt + schweden + (schweden_einwohnerzahl - schweden2008) + mio);
-    document.querySelector(".germany").addEventListener('click', clickdeutschtschland);
-    function clickdeutschtschland() {
+    document.querySelector(".germany").addEventListener('click', clickdeutschland);
+    function clickdeutschland() {
         document.querySelector(".überschrift").innerHTML = "Einwohner*innen in Deutschland";
         document.querySelector(".einwohnerges").innerHTML = "Gesamtzahl Einwohner*innen in Deutschland 2021 ";
         document.querySelector(".zahl1").innerHTML = String(deutschland_einwohnerzahl);

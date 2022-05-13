@@ -58,10 +58,10 @@ console.log(beforegesamt+schweden+(schweden_einwohnerzahl-schweden2008)+mio)
 
 
 
-document.querySelector(".germany").addEventListener('click', clickdeutschtschland);
+document.querySelector(".germany").addEventListener('click', clickdeutschland);
 
 
-function clickdeutschtschland(){
+function clickdeutschland(){
     document.querySelector(".überschrift").innerHTML="Einwohner*innen in Deutschland"
     document.querySelector(".einwohnerges").innerHTML="Gesamtzahl Einwohner*innen in Deutschland 2021 ";
     document.querySelector(".zahl1").innerHTML= String(deutschland_einwohnerzahl);
@@ -88,8 +88,8 @@ function clickitalien(){
     document.querySelector(".einwohnerges").innerHTML="Gesamtzahl Einwohner*innen in Italien 2021 ";
     document.querySelector(".zahl1").innerHTML= String(italien_einwohnerzahl);
     document.querySelector(".zahl2").innerHTML= String((italien_einwohnerzahl/eubuerger*hundert).toFixed(2)+prozent);
-    document.querySelector(".zahl3").innerHTML= String((((italien_einwohnerzahl-italien2008)/italien2008)*hundert).toFixed(2)+prozent)
-    document.querySelector(".zahl4").innerHTML= String(((italien_einwohnerzahl-italien2008)).toFixed(2)+mio)
+    document.querySelector(".zahl3").innerHTML= String((((italien_einwohnerzahl-italien2008)/italien2008)*hundert).toFixed(2)+prozent);
+    document.querySelector(".zahl4").innerHTML= String(((italien_einwohnerzahl-italien2008)).toFixed(2)+mio);
 };
 
 
@@ -100,8 +100,8 @@ function clickschweden(){
     document.querySelector(".einwohnerges").innerHTML="Gesamtzahl Einwohner*innen in Schweden 2021 ";
     document.querySelector(".zahl1").innerHTML= String(schweden_einwohnerzahl);
     document.querySelector(".zahl2").innerHTML= String((schweden_einwohnerzahl/eubuerger*hundert).toFixed(2)+prozent);
-    document.querySelector(".zahl3").innerHTML= String((((schweden_einwohnerzahl-schweden2008)/schweden2008)*hundert).toFixed(2)+prozent)
-    document.querySelector(".zahl4").innerHTML= String(((schweden_einwohnerzahl-schweden2008)).toFixed(2)+mio)
+    document.querySelector(".zahl3").innerHTML= String((((schweden_einwohnerzahl-schweden2008)/schweden2008)*hundert).toFixed(2)+prozent);
+    document.querySelector(".zahl4").innerHTML= String(((schweden_einwohnerzahl-schweden2008)).toFixed(2)+mio);
 };
 
 
