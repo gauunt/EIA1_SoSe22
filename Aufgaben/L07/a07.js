@@ -41,6 +41,7 @@ window.addEventListener('load', function () {
     console.log(beforegesamt + schweden + (schweden_einwohnerzahl - schweden2008) + mio);
     document.querySelector(".germany").addEventListener('click', clickdeutschtschland);
     function clickdeutschtschland() {
+        document.querySelector(".überschrift").innerHTML = "Einwohner*innen in Deutschland";
         document.querySelector(".einwohnerges").innerHTML = "Gesamtzahl Einwohner*innen in Deutschland 2021 ";
         document.querySelector(".zahl1").innerHTML = String(deutschland_einwohnerzahl);
         document.querySelector(".zahl2").innerHTML = String((deutschland_einwohnerzahl / eubuerger * hundert).toFixed(2) + prozent);
@@ -50,6 +51,7 @@ window.addEventListener('load', function () {
     ;
     document.querySelector(".france").addEventListener('click', clickfrankreich);
     function clickfrankreich() {
+        document.querySelector(".überschrift").innerHTML = "Einwohner*innen in Frankreich";
         document.querySelector(".einwohnerges").innerHTML = "Gesamtzahl Einwohner*innen in Frankreich 2021 ";
         document.querySelector(".zahl1").innerHTML = String(frankreich_einwohnerzahl);
         document.querySelector(".zahl2").innerHTML = String((frankreich_einwohnerzahl / eubuerger * hundert).toFixed(2) + prozent);
@@ -59,6 +61,7 @@ window.addEventListener('load', function () {
     ;
     document.querySelector(".italy").addEventListener('click', clickitalien);
     function clickitalien() {
+        document.querySelector(".überschrift").innerHTML = "Einwohner*innen in Italien ";
         document.querySelector(".einwohnerges").innerHTML = "Gesamtzahl Einwohner*innen in Italien 2021 ";
         document.querySelector(".zahl1").innerHTML = String(italien_einwohnerzahl);
         document.querySelector(".zahl2").innerHTML = String((italien_einwohnerzahl / eubuerger * hundert).toFixed(2) + prozent);
@@ -68,6 +71,7 @@ window.addEventListener('load', function () {
     ;
     document.querySelector(".sweden").addEventListener('click', clickschweden);
     function clickschweden() {
+        document.querySelector(".überschrift").innerHTML = "Einwohner*innen in Schweden";
         document.querySelector(".einwohnerges").innerHTML = "Gesamtzahl Einwohner*innen in Schweden 2021 ";
         document.querySelector(".zahl1").innerHTML = String(schweden_einwohnerzahl);
         document.querySelector(".zahl2").innerHTML = String((schweden_einwohnerzahl / eubuerger * hundert).toFixed(2) + prozent);
@@ -77,11 +81,13 @@ window.addEventListener('load', function () {
     ;
     document.querySelector(".eu_stars").addEventListener('click', clickstars);
     function clickstars() {
+        document.querySelector(".überschrift").innerHTML = "Einwohner*innen in der europäischen Union";
         document.querySelector(".einwohnerges").innerHTML = "Gesamtzahl Einwohner*innen in der EU 2021";
-        document.querySelector(".zahl1").innerHTML = String();
-        document.querySelector(".zahl2").innerHTML = String();
-        document.querySelector(".zahl3").innerHTML = String();
-        document.querySelector(".zahl4").innerHTML = String();
+        document.querySelector(".zahl1").innerHTML = String(eu_einwohnerzahl);
+        document.querySelector(".zahl2").innerHTML = "-";
+        document.querySelector(".zahl3").innerHTML = String((((eu_einwohnerzahl - eu2008) / eu2008) * hundert).toFixed(2) + prozent);
+        document.querySelector(".zahl4").innerHTML = String(((eu_einwohnerzahl - eu2008)).toFixed(2) + mio);
     }
+    ;
 });
 //# sourceMappingURL=a07.js.map
