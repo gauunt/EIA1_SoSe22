@@ -99,7 +99,7 @@ function clickitalien(){
     document.querySelector(".sweden").addEventListener('click', clickschweden);
 
 function clickschweden(){
-    document.querySelector(".chart").setAttribute("style", "height: 2.37%%");
+    document.querySelector(".chart").setAttribute("style", "height: 2.37%");
     document.querySelector(".überschrift").innerHTML="Einwohner*innen in Schweden";
     document.querySelector(".einwohnerges").innerHTML="Gesamtzahl Einwohner*innen in Schweden 2021 ";
     document.querySelector(".zahl1").innerHTML= String(schweden_einwohnerzahl);
@@ -112,6 +112,7 @@ function clickschweden(){
     document.querySelector(".eu_stars").addEventListener('click', clickstars);
 
 function clickstars(){
+    document.querySelector(".chart").setAttribute("style", "height: 100%")
     document.querySelector(".überschrift").innerHTML="Einwohner*innen in der europäischen Union"
     document.querySelector(".einwohnerges").innerHTML="Gesamtzahl Einwohner*innen in der EU 2021";
     document.querySelector(".zahl1").innerHTML= String(eu_einwohnerzahl);
