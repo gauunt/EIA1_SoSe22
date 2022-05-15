@@ -83,7 +83,7 @@ window.addEventListener('load', function () {
         document.querySelector(".zahl4").innerHTML = String(((schweden_einwohnerzahl - schweden2008)).toFixed(2) + mio);
     }
     ;
-    document.querySelector(".eu_stars").addEventListener('click', clickstars);
+    document.querySelector(".stars").addEventListener('click', clickstars);
     function clickstars() {
         document.querySelector(".chart").setAttribute("style", "height: 100%");
         document.querySelector(".überschrift").innerHTML = "Einwohner*innen in der europäischen Union";

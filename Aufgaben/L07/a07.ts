@@ -109,7 +109,7 @@ function clickschweden(){
 };
 
 
-    document.querySelector(".eu_stars").addEventListener('click', clickstars);
+    document.querySelector(".stars").addEventListener('click', clickstars);
 
 function clickstars(){
     document.querySelector(".chart").setAttribute("style", "height: 100%")
