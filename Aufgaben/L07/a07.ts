@@ -62,7 +62,8 @@ document.querySelector(".germany").addEventListener('click', clickdeutschland);
 
 
 function clickdeutschland(){
-    document.querySelector(".überschrift").innerHTML="Einwohner*innen in Deutschland"
+    document.querySelector(".chart").setAttribute("style", "height: 18.61%");
+    document.querySelector(".überschrift").innerHTML="Einwohner*innen in Deutschland";
     document.querySelector(".einwohnerges").innerHTML="Gesamtzahl Einwohner*innen in Deutschland 2021 ";
     document.querySelector(".zahl1").innerHTML= String(deutschland_einwohnerzahl);
     document.querySelector(".zahl2").innerHTML= String((deutschland_einwohnerzahl/eubuerger*hundert).toFixed(2)+prozent);
@@ -73,7 +74,8 @@ function clickdeutschland(){
  document.querySelector(".france").addEventListener('click', clickfrankreich);
 
 function clickfrankreich(){
-    document.querySelector(".überschrift").innerHTML="Einwohner*innen in Frankreich"
+    document.querySelector(".chart").setAttribute("style", "height: 14.61%");
+    document.querySelector(".überschrift").innerHTML="Einwohner*innen in Frankreich";
     document.querySelector(".einwohnerges").innerHTML="Gesamtzahl Einwohner*innen in Frankreich 2021 ";
     document.querySelector(".zahl1").innerHTML= String(frankreich_einwohnerzahl);
     document.querySelector(".zahl2").innerHTML= String((frankreich_einwohnerzahl/eubuerger*hundert).toFixed(2)+prozent);
@@ -84,7 +86,8 @@ function clickfrankreich(){
     document.querySelector(".italy").addEventListener('click', clickitalien);
 
 function clickitalien(){
-    document.querySelector(".überschrift").innerHTML="Einwohner*innen in Italien "
+    document.querySelector(".chart").setAttribute("style", "height: 13.33%");
+    document.querySelector(".überschrift").innerHTML="Einwohner*innen in Italien ";
     document.querySelector(".einwohnerges").innerHTML="Gesamtzahl Einwohner*innen in Italien 2021 ";
     document.querySelector(".zahl1").innerHTML= String(italien_einwohnerzahl);
     document.querySelector(".zahl2").innerHTML= String((italien_einwohnerzahl/eubuerger*hundert).toFixed(2)+prozent);
@@ -96,7 +99,8 @@ function clickitalien(){
     document.querySelector(".sweden").addEventListener('click', clickschweden);
 
 function clickschweden(){
-    document.querySelector(".überschrift").innerHTML="Einwohner*innen in Schweden"
+    document.querySelector(".chart").setAttribute("style", "height: 2.37%%");
+    document.querySelector(".überschrift").innerHTML="Einwohner*innen in Schweden";
     document.querySelector(".einwohnerges").innerHTML="Gesamtzahl Einwohner*innen in Schweden 2021 ";
     document.querySelector(".zahl1").innerHTML= String(schweden_einwohnerzahl);
     document.querySelector(".zahl2").innerHTML= String((schweden_einwohnerzahl/eubuerger*hundert).toFixed(2)+prozent);

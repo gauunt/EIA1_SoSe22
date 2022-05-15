@@ -12,7 +12,7 @@ body {
     transition: all .3s;
 }
 
-.wrapper:hover, .wrapper.active {
+.wrapper:hover {
     transform: scale(1.1);
     opacity: 1;
 }
@@ -24,6 +24,11 @@ body {
 
 .stars {
     width: 150px;
+}
+
+.stars:hover {
+    transform: scale(1.1);
+    opacity: 1;
 }
 
 nav {
