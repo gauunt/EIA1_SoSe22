@@ -11,7 +11,7 @@ window.addEventListener('load', function () {
     document.querySelector(".playit").addEventListener('click', playinterval);
 });
 var sound = [new Audio('./assets/A.mp3'),
-    new Audio('./assets/C.mp3'),
+    new Audio('./assets/A.mp3'),
     new Audio('./assets/F.mp3'),
     new Audio('./assets/G.mp3'),
     new Audio('./assets/hihat.mp3'),
@@ -27,6 +27,7 @@ function playsample() {
     Index = document.querySelector("button:hover").getAttribute("id");
     sound[Index].play();
 }
+;
 var Index;
 var counter = 0;
 function playall() {
@@ -37,7 +38,9 @@ function playall() {
         clearInterval(Index);
     }
 }
+;
 function playinterval() {
     Index = setInterval(playall, 500);
 }
+;
 //# sourceMappingURL=a08.js.map
