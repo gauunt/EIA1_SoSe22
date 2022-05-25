@@ -63,3 +63,8 @@ button{
 .button9{
     background-color: #6b3b84;
 }
+
+#stop{
+    color: white;
+    position: relative;
+}
