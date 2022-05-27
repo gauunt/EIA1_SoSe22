@@ -27,22 +27,22 @@ new Audio('./assets/kick.mp3'), new Audio('./assets/snare.mp3'),
 ];
 
 function playsample(){
-    Index= document.querySelector("button:hover").getAttribute("id")
-    sound[Index].play();
+    index= document.querySelector("button:hover").getAttribute("id")
+    sound[index].play();
 };
 
-var Index;
-var counter: number=0;
+var index;
+var counter: number = 0;
 
 function playall (){
     playlist[counter].play();
     counter++
     console.log(counter)
     if(counter==playlist.length){
-        clearInterval(Index)
+        clearInterval(index)
     }
 };
 
 function playinterval(){
-    Index= setInterval(playall, 500)
+    index= setInterval(playall, 500)
 };
