@@ -1,5 +1,6 @@
 body{
     background-color: black;
+    text-align: center;
 }
 
 button{
@@ -23,7 +24,7 @@ button{
     justify-content: center;
 }
 
-.play{
+.iconplay{
     display: flex;
     justify-content: center;
 }
@@ -66,5 +67,10 @@ button{
 
 #stop{
     color: white;
+    position: relative;
+}
+
+#play{
+    color:white;
     position: relative;
 }

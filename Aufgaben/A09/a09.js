@@ -20,6 +20,7 @@ var sound = [new Audio('./assets/A.mp3'),
     new Audio('./assets/laugh-2.mp3'),
     new Audio('./assets/snare.mp3'),
 ];
+var playstop = false;
 var playlist = [new Audio('./assets/hihat.mp3'),
     new Audio('./assets/kick.mp3'), new Audio('./assets/snare.mp3'),
 ];
@@ -43,4 +44,16 @@ function playinterval() {
     Index = setInterval(playall, 500);
 }
 ;
+function playinterval() {
+    if (playstop == false) {
+        document.getElementById("play").classList.remove("fa-play");
+        document.getElementById("play").classList.add("fa-stop");
+        playstop = true;
+    }
+    else {
+        document.getElementById("play").classList.remove("fa-stop");
+        document.getElementById("play").classList.add("fa-play");
+        playstop = false;
+    }
+}
 //# sourceMappingURL=a09.js.map

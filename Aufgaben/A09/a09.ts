@@ -9,6 +9,7 @@ window.addEventListener('load', function(){
     document.querySelector(".button8").addEventListener('click', playsample);
     document.querySelector(".button9").addEventListener('click', playsample);
     document.querySelector(".playit").addEventListener('click', playinterval);
+
     });
     
     var sound: HTMLAudioElement[] = [new Audio('./assets/A.mp3'),
@@ -22,6 +23,8 @@ window.addEventListener('load', function(){
     new Audio('./assets/snare.mp3'),
     ];
     
+    var playstop: boolean=false;
+
     var playlist: HTMLAudioElement[] = [new Audio('./assets/hihat.mp3'),
     new Audio('./assets/kick.mp3'), new Audio('./assets/snare.mp3'),
     ];
@@ -46,3 +49,17 @@ window.addEventListener('load', function(){
     function playinterval(){
         Index= setInterval(playall, 500)
     };
+
+function playinterval(){
+    if(playstop==false){
+        document.getElementById("play").classList.remove("fa-play");
+        document.getElementById("play").classList.add("fa-stop");
+        playstop=true;
+    }
+
+    else{
+        document.getElementById("play").classList.remove("fa-stop");
+        document.getElementById("play").classList.add("fa-play");
+        playstop=false;
+    }
+}
