@@ -10,6 +10,5 @@ for (var index: number = 0; index < names.length; index++) {
     console.log(index);
     console.log(names[ index ]);
 
-    document.querySelector("#liste").innerHTML+= names[index]+
-}
-
+    document.querySelector("#liste").innerHTML+= names[index] +
+ }
