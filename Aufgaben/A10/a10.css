@@ -1,0 +1,16 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.containermid{
+    width: 250px;
+    margin: auto;
+    position: relative;
+}
+
+h1{
+    width: 250px;
+    margin: auto;
+    position: relative;
+    color: seagreen;
+}
