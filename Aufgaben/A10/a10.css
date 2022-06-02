@@ -14,3 +14,7 @@ h1{
     position: relative;
     color: seagreen;
 }
+
+li:hover{
+    background-color: lightyellow;
+}
