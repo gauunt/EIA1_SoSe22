@@ -4,6 +4,7 @@ window.addEventListener("load", function () {
 function hinzufügen() {
     if (hinzufügentrue == true)
         document.createElement("li");
+    document.getElementById("liste").appendChild(li);
 }
 var hinzufügentrue;
 //# sourceMappingURL=a10.js.map

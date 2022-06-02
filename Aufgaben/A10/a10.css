@@ -15,6 +15,10 @@ h1{
     color: seagreen;
 }
 
+input{
+    width: 150px;
+}
+
 li:hover{
     background-color: lightyellow;
 }

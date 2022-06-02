@@ -5,7 +5,8 @@ window.addEventListener("load", function(){
 function hinzufügen(){
     if(hinzufügentrue==true)
     document.createElement("li");
-    
+    document.getElementById("liste").appendChild(li);
+
 }
 
 var hinzufügentrue: boolean;
