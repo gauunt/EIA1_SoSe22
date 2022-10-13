@@ -19,7 +19,7 @@ function getVerse(_subjekt: string[], _praedikat: string[], _objekt: string[]): 
     let randomPraedikat: string[] = _praedikat.splice(rNumberP, 1);
     let randomObjekt: string[] = _objekt.splice(rNumberO, 1);
 
-    console.log(randomSubjekt + "" + randomPraedikat + "" +randomObjekt);
+    console.log(randomSubjekt + "" + randomPraedikat + "" + randomObjekt);
     return;
     
 }
