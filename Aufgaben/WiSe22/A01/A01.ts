@@ -9,7 +9,7 @@ for (let _i: number = subjekt.length; _i > 0; _i--) {
 }
 
 //ordnet die Wörter zufällig
-function getVerse(_subjekt: string[], _praedikat: string[], _objekt: string[]: string{
+function getVerse(_subjekt: string[], _praedikat: string[], _objekt: string[]): string {
 
     let rNumberS: number = Math.floor(Math.random() * subjekt.length);
     let  rNumberP: number = Math.floor(Math.random() * praedikat.length);
@@ -22,4 +22,4 @@ function getVerse(_subjekt: string[], _praedikat: string[], _objekt: string[]: s
     console.log(randomSubjekt + "" + randomPraedikat + "" +randomObjekt);
     return;
     
-})
+}
