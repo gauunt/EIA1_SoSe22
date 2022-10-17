@@ -1,6 +1,6 @@
 //Wörter definieren
-let subjekt: string [] = ["Oma ", "Opa ", "Lisbet ", "Magda ", "Erhard "];
-let praedikat: string [] = ["liest ", "isst ", "rollt ", "hüpft ", "schleicht "];
+let subjekt: string [] = ["Oma", "Opa", "Lisbet", "Magda", "Erhard"];
+let praedikat: string [] = ["liest", "isst", "rollt", "hüpft", "schleicht"];
 let objekt: string [] = ["Rollmops", "Zeitung", "Tische", "Fische", "Zeit"];
 
 //erstellt Zufallsgedicht Schleife
@@ -19,7 +19,7 @@ function getZeile(_subjekt: string[], _praedikat: string[], _objekt: string[]): 
     let randomP: string[] = _praedikat.splice(randomNumberP, 1);
     let randomO: string[] = _objekt.splice(randomNumberO, 1);
 
-    console.log(randomS + "  " + randomP + "  " + randomO);
+    console.log(randomS + " " + randomP + " " + randomO + ".");
     return;
     
 }
