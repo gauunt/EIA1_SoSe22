@@ -19,7 +19,7 @@ function getZeile(_subjekt: string[], _praedikat: string[], _objekt: string[]): 
     let randomP: string[] = _praedikat.splice(randomNumberP, 1);
     let randomO: string[] = _objekt.splice(randomNumberO, 1);
 
-    console.log(randomS + " " + randomP + " " + randomO);
+    console.log(randomS + "  " + randomP + "  " + randomO);
     return;
     
 }
