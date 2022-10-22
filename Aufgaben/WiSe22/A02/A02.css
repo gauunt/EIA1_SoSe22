@@ -1,15 +1,34 @@
+h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .div0 {
-    border: black solid;
+    background-color: aquamarine;
     height: 500px;
-    width: 500px;
+    width: 47%;
+    position: relative;
     float: left;
 }
 
 .div1 {
-    border: black solid;
+    background-color: aquamarine;
     height: 500px;
-    width: 500px;
+    width: 47%;
+    position: relative;
     float: right;
-   
-    
+}
+
+.span {
+    background-color: rgb(251, 73, 251);
+    height: 40px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
+.button {
+    background-color: lightblue;
+    position: fixed;
+    width: 200px;
+    top: 150px;
+    left: 50px;
 }
