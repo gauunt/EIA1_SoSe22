@@ -1,9 +1,9 @@
 /*
-Aufgabe:01 Zufallsgedicht
+Aufgabe:02
 Name: Marie Walter
 Matrikel: 271138
-Datum: 15.10.2022
-Quellen: orientiert/inspiriert an Bastian Aberle und Lisa Blindenhöfer
+Datum: 22.10.2022
+Quellen: Bastian Aberle, Lisa Blindenhöfer
 */
 
 namespace A02 {
