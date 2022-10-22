@@ -1,47 +1,49 @@
-/*
-Aufgabe: 02
-Name: Marie Walter
-Matrikel Nr.: 271138
-Datum: 22.10.2022
-Quellen: Bastian Aberle, Lisa Blindenhöfer
-*/
 var A02;
 (function (A02) {
     window.addEventListener("load", handleLoad);
+    // ->Event Listener für click, keyup und mousemove<-
+    //um in der Konsole nur eine Ausgabe jedes Events zu bekommen müsste man .but0,body,.div0/1 löschen, da mit 
+    //document.addEventListener bereits alle Elemente auf der Seite eingeschlossen sind, ich hab aber alle reingenommen weil es 
+    //explizit in der Aufgabe stand.
     function handleLoad() {
+        document.addEventListener("click", logInfo);
+        document.querySelector(".but0").addEventListener("click", clickedBut);
+        document.querySelector("body").addEventListener("click", logInfo);
+        document.querySelector(".div0").addEventListener("click", logInfo);
+        document.querySelector(".div1").addEventListener("click", logInfo);
+        document.querySelector("body").addEventListener("keyup", logInfo);
+        document.querySelector(".div0").addEventListener("keyup", logInfo);
+        document.querySelector(".div1").addEventListener("keyup", logInfo);
         document.addEventListener("mousemove", setInfoBox);
-        window.addEventListener("click", function () {
-            document.querySelector("body").addEventListener("click", logInfo);
-            document.querySelector("div0").addEventListener("click", logInfo);
-            document.querySelector("div1").addEventListener("click", logInfo);
-            document.querySelector("body").addEventListener("keyup", logInfo);
-            document.querySelector("div0").addEventListener("keyup", logInfo);
-            document.querySelector("div1").addEventListener("keyup", logInfo);
-            document.querySelector("mousemove", setInfoBox);
-            document.querySelector("button").addEventListener("click", button);
-        });
     }
+    // ->bestimmung der x,y Koordinate der Maus, manipulation des Span Elements, bestimmung des targets<-
     function setInfoBox(_event) {
-        let ix = _event.clientX;
-        let iy = _event.clientY;
-        console.log([ix, iy]);
-        let hover = document.getElementsByClassName("span");
-        hover.style.position = "absolute";
-        hover.style.left = ix + 10 + "px";
-        hover.style.top = iy + 10 + "px";
-        let cursortarget = _event.target;
-        document.querySelector("span").textContent = ix + "," + " " + iy + "," + "target:" + cursortarget;
+        let x = _event.clientX;
+        let y = _event.clientY;
+        let moveSpan = document.getElementById("span");
+        moveSpan.style.position = "absolute";
+        moveSpan.style.left = x + 10 + "px";
+        moveSpan.style.top = y + 10 + "px";
+        let mouseTar = _event.target;
+        // ->x, y + Target wird in den Span eingefügt<-
+        document.querySelector("span").innerHTML = ("x: " + x + " y: " + y + " target: " + mouseTar);
     }
+    //->event type, target, current target, event wird bestimmt und in der Konsole bei Klick ausgegeben<-
     function logInfo(_event) {
-        console.log(_event.type);
-        console.log(_event.target);
-        console.log(_event.currentTarget);
-        console.log(_event);
+        let eventType = _event.type;
+        let event = _event;
+        let mouseTar = _event.target;
+        let currentTar = _event.currentTarget;
+        console.log("Target: " + mouseTar);
+        console.log("Current Target: " + currentTar);
+        console.log("Event: " + event);
+        console.log("Event Type: " + eventType);
     }
-    function button(_event) {
-        let path = _event.composedPath();
-        if (path[5] == document) {
-            console.log(_event);
+    //->fängt DOM-Event ab und gibt es in der Konsole aus<-
+    function clickedBut(_event) {
+        let ePath = _event.composedPath();
+        if (ePath[5] == document) {
+            console.log("abgefangenes DOM-Event: " + _event);
         }
     }
 })(A02 || (A02 = {}));
