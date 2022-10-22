@@ -1,3 +1,10 @@
+/*
+Aufgabe:01 Zufallsgedicht
+Name: Marie Walter
+Matrikel: 271138
+Datum: 15.10.2022
+Quellen: orientiert/inspiriert an Bastian Aberle und Lisa Blindenhöfer
+*/
 var A02;
 (function (A02) {
     window.addEventListener("load", handleLoad);
