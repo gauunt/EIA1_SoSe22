@@ -2,7 +2,7 @@
 Aufgabe:02
 Name: Marie Walter
 Matrikel: 271138
-Datum: 22.10.2022
+Datum: 27.10.2022
 Quellen: (in Zusammenarbeit mit) Lisa Blindenhöfer, Bastian Aberle
 */
 
