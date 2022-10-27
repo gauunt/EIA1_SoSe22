@@ -8,6 +8,11 @@
 
 }
 
+li{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    list-style: none;
+}
+
 body {
     background-color: #eddfff;
     opacity: 0.5;
@@ -64,6 +69,10 @@ main {
     top: 20px;
     color: grey;
     cursor: pointer;
+}
+
+.trash:hover{
+    color: black;
 }
 
 .todo {

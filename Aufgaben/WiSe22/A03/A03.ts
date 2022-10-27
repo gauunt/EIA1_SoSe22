@@ -12,11 +12,18 @@ namespace A03{
 
  function handleload(): void{
     document.querySelector("#addButton").addEventListener("click", newitem);
+    document.querySelector("#trash").addEventListener("click", trash);
+    document.querySelector("#check").addEventListener("click", check);
     console.log("load site")
  }
 
 function newitem(): void{
     console.log("create new listelement: name, amout, date")
 }
-
+function trash(): void{
+    console.log("delete item")
+}
+function check(): void{
+    console.log("check item")
+}
 }
