@@ -1,0 +1,140 @@
+.container{
+    position: relative;
+    justify-content: center;
+    width: 300px;
+    height: 500px;
+    margin: 75px auto;
+    border-style: initial;
+    background-color: #e1e0ff;
+}
+
+#smartphone{
+    height: 667px;
+    width: 375px;
+    position: relative;
+    border-style: outset;
+    justify-content: center;
+    margin: 75px auto;
+    background-color: #e1e0ff;
+}
+
+.html{
+    height: 50px;
+    width: 300px;
+    background-color: #8097e4;
+}
+
+
+.css{
+    height: 50px;
+    width: 300px;
+    background-color: #8097e4;
+}
+
+.typescript{
+    height: 50px;
+    width: 300px;
+    background-color: #8097e4;
+}
+
+.gemischt{
+    height: 50px;
+    width: 300px;
+    background-color: #8097e4;
+}
+
+h1{
+    position: relative;
+    margin: 25px;
+}
+
+.text1{
+    position: relative;
+    margin: 32px;
+    color: #778dd3;
+}
+
+footer{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.footer{
+    width: 375px;
+    height: 80px;
+    position: absolute;
+    border-style: hidden;
+    background-color: #98a9e4;
+    bottom: 0px;
+
+}
+
+
+.p1{
+    position: absolute;
+    color: white;
+    left: 45px;
+    bottom: 7px;
+}
+
+body {
+    position: relative;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.home {
+    position: relative;
+    height: 50px;
+    left: 170px;
+    bottom: 50px;
+    opacity: 60%;
+
+}
+
+#weiter {
+    position: relative;
+    left: 105px;
+    bottom: -100px;
+    height: 30px;
+    width: 100px;
+}
+
+.divsingleanswer{
+    width: 200px;
+    height: 30px;
+    background-color: #8097e4;
+    border-style: outset;
+    position: relative;
+    justify-content: center;
+    margin: 10px;
+    text-align: center;
+    left: 36px;
+    top: 50px;
+    cursor: pointer;
+}
+
+.divsingleanswer:hover{
+opacity: 0.8;
+}
+
+#points{
+    background-color: #98a9e4;
+}
+
+#german{
+    background-color: #98a9e4;
+    width: fit-content;
+    height: 30px;
+}
+
+#right {
+    width: fit-content;
+    height: 40px;
+}
+
+.punktestand {
+    background-color: #98a9e4;
+    top: 160px;
+    position: inherit;
+    height: 30px;
+
+}
