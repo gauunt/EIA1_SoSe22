@@ -1,9 +1,9 @@
 /*
-Aufgabe:02
+Aufgabe: L01 Zufallsgedicht
 Name: Marie Walter
 Matrikel: 271138
-Datum: 22.10.2022
-Quellen: Bastian Aberle, Lisa Blindenhöfer
+Datum: 01.04.2023
+Quellen:
 */
 var A02;
 (function (A02) {
@@ -19,16 +19,19 @@ var A02;
         document.querySelector(".div1").addEventListener("keyup", logInfo);
         document.addEventListener("mousemove", setInfoBox);
     }
+    // bestimmung der x,y Koordinate der Maus, manipulation des Span Elements, bestimmung des targets
     function setInfoBox(_event) {
         let x = _event.clientX;
         let y = _event.clientY;
         let moveSpan = document.getElementById("span");
         moveSpan.style.position = "absolute";
-        moveSpan.style.left = x + 5 + "px";
-        moveSpan.style.top = y + 5 + "px";
+        moveSpan.style.left = x + 10 + "px";
+        moveSpan.style.top = y + 10 + "px";
         let mouseTar = _event.target;
+        // x, y + Target wird in den Span eingefügt
         document.querySelector("span").innerHTML = ("x: " + x + " y: " + y + " target: " + mouseTar);
     }
+    // event type, target, current target, event wird bestimmt und in der Konsole bei Klick ausgegeben
     function logInfo(_event) {
         let eventType = _event.type;
         let event = _event;
@@ -39,6 +42,7 @@ var A02;
         console.log("Event: " + event);
         console.log("Event Type: " + eventType);
     }
+    // fängt DOM-Event ab und gibt es in der Konsole aus
     function clickedBut(_event) {
         let ePath = _event.composedPath();
         if (ePath[5] == document) {
