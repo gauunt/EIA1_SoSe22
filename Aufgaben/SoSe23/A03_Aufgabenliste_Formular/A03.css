@@ -1,0 +1,101 @@
+.container {
+    border: black solid;
+    height: 700px;
+    width: 390px;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #eddfff;
+    justify-content: center;
+    text-align: center;
+    
+}
+body {
+    background-color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+h1 {
+    margin-top: 50px;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+}
+
+button {
+    position: relative;
+    border: 1px solid rgb(189, 189, 189);
+    margin-top: 15px;
+    width: 300px;
+    height: 25px;
+    background-color: white;
+}
+
+button:hover {
+    opacity: 1;
+    transform: scale(1.05);
+    transition: 0.5s;
+    cursor: pointer;
+    background-color: lightgray;
+}
+
+input {
+    margin-top: 20px;
+    width: 75px;
+}
+
+.task {
+    width: 300px;
+    height: 25px;
+}
+
+.date {
+    width: 110px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.time{
+    width: 110px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.who{
+    width: 110px;
+    height: 20px;
+}
+
+.comment{
+    width: 110px;
+    height: 20px;
+}
+
+li {
+    list-style-type: none;
+    position: relative;
+    text-align: center;
+    margin-top: 15px;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+#inprogress {
+    cursor: pointer;
+}
+
+#done{
+    cursor: pointer;
+}
+
+#trash {
+    margin-left: 20px;
+    color: grey;
+}
+
+#trash:hover {
+    opacity: 1;
+    transform: scale(1.05);
+    transition: 0.5s;
+    color: black;
+    cursor: pointer;
+}
