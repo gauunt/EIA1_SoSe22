@@ -24,7 +24,7 @@ var todolistA04;
     //lädt die Daten aus der data.ts in globale Variablen 
     function loadData() {
         for (let counter = 0; counter < todolistA04.savedInputs.length; counter++) {
-            task = todolistA04.savedInputs[counter].savedItem;
+            task = todolistA04.savedInputs[counter].savedTask;
             date = todolistA04.savedInputs[counter].savedDate;
             time = todolistA04.savedInputs[counter].savedTime;
             who = todolistA04.savedInputs[counter].savedWho;

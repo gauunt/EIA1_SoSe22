@@ -28,7 +28,7 @@ namespace todolistA04 {
     //lädt die Daten aus der data.ts in globale Variablen 
     function loadData(): void {
         for (let counter: number = 0; counter < savedInputs.length; counter++) {
-            task = savedInputs[counter].savedItem;
+            task = savedInputs[counter].savedTask;
             date = savedInputs[counter].savedDate;
             time = savedInputs[counter].savedTime;
             who = savedInputs[counter].savedWho;

@@ -9,7 +9,7 @@ var todolistA04;
 (function (todolistA04) {
     todolistA04.savedInputs = [
         {
-            savedItem: "Toilettenpapier kaufen",
+            savedTask: "Toilettenpapier kaufen",
             savedDate: "15.04.2023",
             savedTime: "17:20",
             savedWho: "Lillith",
@@ -17,7 +17,7 @@ var todolistA04;
             savedPurchase: false
         },
         {
-            savedItem: "Bad Putzen",
+            savedTask: "Bad Putzen",
             savedDate: "28.04.2032",
             savedTime: "12:00",
             savedWho: "Donatello",
@@ -25,7 +25,7 @@ var todolistA04;
             savedPurchase: true
         },
         {
-            savedItem: "Regal aufbauen",
+            savedTask: "Regal aufbauen",
             savedDate: "01.05.2023",
             savedTime: "20:15",
             savedWho: "Fred",
@@ -33,6 +33,6 @@ var todolistA04;
             savedPurchase: false
         }
     ];
-    todolistA04.savedItem = "";
+    todolistA04.savedTask = "";
 })(todolistA04 || (todolistA04 = {}));
 //# sourceMappingURL=A04_Data.js.map
