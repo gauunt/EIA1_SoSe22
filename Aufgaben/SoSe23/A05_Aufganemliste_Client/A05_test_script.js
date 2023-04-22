@@ -37,7 +37,7 @@ var ToDoListA05;
         query.set("command", "insert");
         query.set("collection", "data");
         query.set("data", JSON.stringify(json));
-        let response = await fetch("https://webuser.hs-furtwangen.de/~aberleba/Database/index.php?" + query.toString());
+        let response = await fetch("https://webuser.hs-furtwangen.de/~waltermm/Database/index.php?" + query.toString());
         console.log(response);
         console.log("data sent");
     }
