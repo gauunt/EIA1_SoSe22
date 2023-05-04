@@ -1,5 +1,5 @@
 /*
-Aufgabe:L04_Aufgabenliste_Formular
+Aufgabe:L05_Aufgabenliste_Client
 Name: Marie Walter
 Matrikel: 271138
 Datum: 22.04.2023
@@ -57,8 +57,8 @@ var ToDoListA05;
     function loadInput() {
         let formData = new FormData(document.forms[0]);
         let task = formData.get("task").toString();
-        let date = new Date().toLocaleDateString();
-        let time = new Time().toLocaleTimeString();
+        let date = new date().toLocaleDateString();
+        let time = new time().toLocaleTimeString();
         let who = formData.get("who").toString();
         let comment = formData.get("Area").toString();
         //umwandlung nextPurchase von Input in string
