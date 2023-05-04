@@ -82,8 +82,8 @@ namespace ToDoListA05 {
     function loadInput(): void {
         let formData: FormData = new FormData(document.forms[0]);
         let task: string = formData.get("task").toString();
-        let date: string = new Date().toLocaleDateString();
-        let time: string = new Time().toLocaleTimeString();
+        let date: string = new date().toLocaleDateString();
+        let time: string = new time().toLocaleTimeString();
         let who: string = formData.get("who").toString();
         let comment: string = formData.get("Area").toString();
 
