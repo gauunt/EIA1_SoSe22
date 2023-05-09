@@ -11,16 +11,20 @@ var ToDoListA05;
     //lädt Liste und ruft loadData auf
     async function handleLoad() {
         let button = document.querySelector("button[type=submit]");
-        let response = await fetch("data.json");
+        let query = new URLSearchParams();
+        query.set("command", "find");
+        query.set("collection", "data");
+        let response = await fetch("https://webuser.hs-furtwangen.de/~waltermm/Database/index.php?" + query.toString());
         let entry = await response.text();
         let data = JSON.parse(entry);
         button.addEventListener("click", handleButton);
         // clearInputs();
-        loadData(data);
+        console.log(data.data);
+        loadData(data.data);
     }
     //managed die Buttons
     function handleButton() {
-        loadInput();
+        // loadInput();
         sendData();
     }
     //client austausch
@@ -57,8 +61,8 @@ var ToDoListA05;
     function loadInput() {
         let formData = new FormData(document.forms[0]);
         let task = formData.get("task").toString();
-        let date = new date().toLocaleDateString();
-        let time = new time().toLocaleTimeString();
+        let date = new Date().toLocaleDateString();
+        let time = getTime().toLocaleTimeString();
         let who = formData.get("who").toString();
         let comment = formData.get("Area").toString();
         //umwandlung nextPurchase von Input in string

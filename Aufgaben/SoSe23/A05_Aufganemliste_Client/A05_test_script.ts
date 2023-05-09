@@ -28,17 +28,21 @@ namespace ToDoListA05 {
     //lädt Liste und ruft loadData auf
     async function handleLoad(): Promise<void> {
         let button: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button[type=submit]");
-        let response: Response = await fetch("data.json");
+        let query: URLSearchParams = new URLSearchParams();
+        query.set("command", "find");
+        query.set("collection", "data");
+        let response: Response = await fetch("https://webuser.hs-furtwangen.de/~waltermm/Database/index.php?" + query.toString());        
         let entry: string = await response.text();
         let data: Input[] = JSON.parse(entry);
         button.addEventListener("click", handleButton);
         // clearInputs();
-        loadData(data);
+        console.log (data.data);
+        loadData(data.data);
     }
 
     //managed die Buttons
     function handleButton(): void {
-        loadInput();
+       // loadInput();
         sendData();
     }
 
@@ -82,8 +86,8 @@ namespace ToDoListA05 {
     function loadInput(): void {
         let formData: FormData = new FormData(document.forms[0]);
         let task: string = formData.get("task").toString();
-        let date: string = new date().toLocaleDateString();
-        let time: string = new time().toLocaleTimeString();
+        let date: string = new Date().toLocaleDateString();
+        let time: string = getTime().toLocaleTimeString();
         let who: string = formData.get("who").toString();
         let comment: string = formData.get("Area").toString();
 
