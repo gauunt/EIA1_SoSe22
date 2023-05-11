@@ -30,13 +30,13 @@ var a08_generativeArt;
             crc2.lineTo(randoma, randomb);
             crc2.stroke();
             if (random == 1) {
-                crc2.strokeStyle = "#008ECC";
+                crc2.strokeStyle = "green";
             }
             if (random == 2) {
-                crc2.strokeStyle = "blue";
+                crc2.strokeStyle = "red";
             }
             if (random == 3) {
-                crc2.strokeStyle = "#F5FF00";
+                crc2.strokeStyle = "yellow";
             }
             crc2.shadowBlur = 20;
         }
@@ -61,10 +61,10 @@ var a08_generativeArt;
                 crc2.fillStyle = gradient;
             }
             if (random == 2) {
-                crc2.fillStyle = "#57A0D3";
+                crc2.fillStyle = "#ff8080";
             }
             if (random == 3) {
-                crc2.fillStyle = "blue";
+                crc2.fillStyle = "#ffbfbf";
             }
         }
     }
