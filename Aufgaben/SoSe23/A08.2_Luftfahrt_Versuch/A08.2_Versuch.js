@@ -27,6 +27,7 @@ var A082;
         drawMountains(posMountains, 50, 150, "grey", "lightgrey");
         drawTrees({ x: 500, y: 600 });
         drawBugs();
+        drawLandingfield();
     }
     function drawBugs() {
         let canvas = document.querySelector("canvas");
@@ -57,6 +58,23 @@ var A082;
             crc2.beginPath();
             crc2.ellipse(-10, 18, 10, 20, 1.1, 0, 0.1, true);
             crc2.fillStyle = "black";
+            crc2.fill();
+            crc2.closePath();
+            crc2.restore();
+        }
+    }
+    function drawLandingfield() {
+        let canvas = document.querySelector("canvas");
+        for (let index = 0; index < 7; index++) {
+            crc2.save();
+            crc2.scale(1.5, 1);
+            crc2.beginPath();
+            crc2.translate(800, 600);
+            crc2.moveTo(30, 0);
+            crc2.lineTo(300, 0);
+            crc2.lineTo(250, 200);
+            crc2.lineTo(-30, 200);
+            crc2.fillStyle = "grey";
             crc2.fill();
             crc2.closePath();
             crc2.restore();
@@ -110,8 +128,8 @@ var A082;
         console.log("Background");
         let gradient = crc2.createLinearGradient(0, 0, 0, crc2.canvas.height);
         gradient.addColorStop(0, "lightblue");
-        gradient.addColorStop(golden, "white");
-        gradient.addColorStop(1, "lightgray");
+        gradient.addColorStop(0.5, "white");
+        gradient.addColorStop(1, "green");
         crc2.fillStyle = gradient;
         crc2.fillRect(0, 0, crc2.canvas.width, crc2.canvas.height);
     }

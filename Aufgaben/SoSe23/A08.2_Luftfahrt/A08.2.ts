@@ -499,3 +499,26 @@ namespace A082 {
     }
 
 }
+
+
+
+
+
+function drawLandingfield(_position: VectorBackground): void{
+    let canvas: HTMLCanvasElement | null = document.querySelector("canvas");
+    for (let index: number = 0; index < 7; index++) {
+
+     crc2.save();
+        crc2.scale(1.5, 1);
+        crc2.beginPath();
+        crc2.translate(800, 600);
+        crc2.moveTo(30, 0);
+        crc2.lineTo(300, 0);
+        crc2.lineTo(250, 200);
+        crc2.lineTo(-30, 200);
+        crc2.fillStyle = "grey";
+        crc2.fill();
+        crc2.closePath();
+        crc2.restore();
+}
+}
