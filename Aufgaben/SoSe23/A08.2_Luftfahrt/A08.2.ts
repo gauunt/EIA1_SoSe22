@@ -34,6 +34,8 @@ namespace A082 {
         drawTrees({ x: 500, y: 600 });
         drawLandingfield({x: 500, y: 500});
         drawParaglide({x: 500, y:500});
+        drawKiosk({x:1400, y:780});
+        drawWindsock({x:700, y:780});
         drawBugs();
     }
 
@@ -109,22 +111,22 @@ namespace A082 {
 
             //seil links
             crc2.save();
-                //crc2.scale(1.2, 1);
+            crc2.scale(1, 1);
             crc2.beginPath();
             crc2.translate(randomX, randomY);
             crc2.moveTo(0, 20);
             crc2.lineTo(-60, -60);
             crc2.closePath();
-            crc2.strokeStyle = "red";
+            crc2.strokeStyle = "black";
             crc2.stroke();
             crc2.restore();
 
             //seil rechts
             crc2.save();
-                //crc2.scale(1.2, 1);
+            crc2.scale(1, 1);
             crc2.beginPath();
             crc2.translate(randomX, randomY);
-            crc2.moveTo(80, -60);
+            crc2.moveTo(70, -60);
             crc2.lineTo(0, 20);
             crc2.closePath();
             crc2.strokeStyle = "black";
@@ -344,7 +346,7 @@ namespace A082 {
             crc2.scale(1.5, 1);
             crc2.beginPath();
             //crc2.translate(randomX, randomY);
-            crc2.translate(950, 700);
+            crc2.translate(1020, 750);
             crc2.scale(2, 2);
             crc2.moveTo(20, 0);
             crc2.lineTo(-20, 0);
@@ -371,7 +373,7 @@ namespace A082 {
             crc2.scale(1.5, 1);
             crc2.beginPath();
             //crc2.translate(randomX, randomY);
-            crc2.translate(950, 700);
+            crc2.translate(1020, 750);
             crc2.moveTo(5, 0);
             crc2.lineTo(-5, 0);
             crc2.lineTo(-5, 15);
@@ -381,6 +383,55 @@ namespace A082 {
             crc2.closePath();
             crc2.restore();
         }
+    }
+
+    //kiosk
+    function drawKiosk (_position: VectorBackground): void{
+        crc2.save();
+        crc2.translate(_position.x, _position.y);
+
+        //haus
+        crc2.beginPath();
+        crc2.moveTo(0, -90);
+        crc2.lineTo(0, 0);
+        crc2.lineTo(90, 0);
+        crc2.lineTo(90, -70);
+        crc2.closePath();
+        crc2.fillStyle = "white";
+        crc2.fill();
+
+        //dach
+        crc2.beginPath();
+        crc2.moveTo(90, -70);
+        crc2.lineTo(-10, -93);
+        crc2.closePath();
+        crc2.strokeStyle = "red"
+        crc2.lineWidth = 8;
+        crc2.stroke();
+
+        crc2.restore();
+    }
+
+    //Windsack
+    function drawWindsock(_position: VectorBackground) {
+
+        //Stab
+        crc2.beginPath();
+        crc2.fillStyle = "#46230a";
+        crc2.fillRect(_position.x, _position.y, 10, 80);
+        crc2.closePath();
+        crc2.restore();
+
+        //Windsack
+        crc2.beginPath();
+        crc2.moveTo(_position.x, _position.y);
+        crc2.lineTo(800, 800);
+        crc2.lineTo(800, 780);
+        crc2.lineTo(700, 740);
+        crc2.fillStyle = "#cc0000";
+        crc2.fill();
+        crc2.closePath();
+        crc2.restore();
     }
 
     //Landeplatz
