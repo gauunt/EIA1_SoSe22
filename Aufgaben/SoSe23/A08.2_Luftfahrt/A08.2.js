@@ -79,7 +79,7 @@ var A082;
         let canvas = document.querySelector("canvas");
         for (let index = 0; index < 10; index++) {
             let randomX = Math.random() * (canvas.width - 1) + 1;
-            let randomY = Math.random() * ((300) - 1) + 1;
+            let randomY = Math.random() * ((400) - 1) + 1;
             console.log("paraglider");
             //schirm
             crc2.save();
@@ -110,7 +110,7 @@ var A082;
             crc2.moveTo(-100, 35);
             crc2.lineTo(-40, -30);
             crc2.closePath();
-            crc2.strokeStyle = "blue";
+            crc2.strokeStyle = "black";
             crc2.stroke();
             crc2.restore();
             //körper Person

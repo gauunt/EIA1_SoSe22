@@ -92,7 +92,7 @@ namespace A082 {
         let canvas: HTMLCanvasElement | null = document.querySelector("canvas");
         for (let index: number = 0; index < 10; index++) {
             let randomX: number = Math.random() * (canvas.width - 1) + 1;
-            let randomY: number = Math.random() * ((300) - 1) + 1;
+            let randomY: number = Math.random() * ((400) - 1) + 1;
 
             console.log("paraglider")
             
@@ -109,7 +109,7 @@ namespace A082 {
 
             //seil links
             crc2.save();
-            //crc2.scale(1.2, 1);
+                //crc2.scale(1.2, 1);
             crc2.beginPath();
             crc2.translate(randomX, randomY);
             crc2.moveTo(0, 40);
@@ -121,13 +121,13 @@ namespace A082 {
 
             //seil rechts
             crc2.save();
-            //crc2.scale(1.2, 1);
+                //crc2.scale(1.2, 1);
             crc2.beginPath();
             crc2.translate(randomX, randomY);
             crc2.moveTo(-100, 35);
             crc2.lineTo(-40, -30);
             crc2.closePath();
-            crc2.strokeStyle = "blue";
+            crc2.strokeStyle = "black";
             crc2.stroke();
             crc2.restore();
 

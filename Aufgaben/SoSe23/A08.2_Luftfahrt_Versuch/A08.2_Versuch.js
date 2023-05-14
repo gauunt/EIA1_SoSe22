@@ -76,13 +76,14 @@ var A082;
         l = Math.random() * 100;
         crc2.save();
         crc2.translate(_position.x, _position.y);
+        //seil1
         crc2.beginPath();
         crc2.moveTo(0, 10);
         crc2.lineTo(20, 30);
         crc2.closePath();
         crc2.strokeStyle = "black";
         crc2.stroke();
-        //seile
+        //seil2
         crc2.beginPath();
         crc2.moveTo(0, 18);
         crc2.lineTo(20, -15);
