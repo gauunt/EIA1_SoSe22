@@ -101,7 +101,7 @@ namespace A082 {
             crc2.scale(1.1, 1);
             crc2.translate(randomX, randomY);
             crc2.beginPath();
-            crc2.ellipse(20, 20, 75, 12, 0, 0, 0.1, true);
+            crc2.ellipse(-20, -70, 110, 15, 0, 0, 0.1, true);
             crc2.fillStyle = randomColor();
             crc2.fill();
             crc2.closePath();
@@ -112,10 +112,10 @@ namespace A082 {
                 //crc2.scale(1.2, 1);
             crc2.beginPath();
             crc2.translate(randomX, randomY);
-            crc2.moveTo(0, 40);
-            crc2.lineTo(50, 100);
+            crc2.moveTo(0, 20);
+            crc2.lineTo(-60, -60);
             crc2.closePath();
-            crc2.strokeStyle = "black";
+            crc2.strokeStyle = "red";
             crc2.stroke();
             crc2.restore();
 
@@ -124,8 +124,8 @@ namespace A082 {
                 //crc2.scale(1.2, 1);
             crc2.beginPath();
             crc2.translate(randomX, randomY);
-            crc2.moveTo(-100, 35);
-            crc2.lineTo(-40, -30);
+            crc2.moveTo(80, -60);
+            crc2.lineTo(0, 20);
             crc2.closePath();
             crc2.strokeStyle = "black";
             crc2.stroke();
@@ -396,8 +396,11 @@ namespace A082 {
             crc2.lineTo(300, 10);
             crc2.lineTo(250, 210);
             crc2.lineTo(-30, 210);
+            crc2.lineTo(30, 10);
             crc2.fillStyle = "#3d8c40";
             crc2.fill();
+            crc2.strokeStyle = "white";
+            crc2.stroke();
             crc2.closePath();
             crc2.restore();
     }
