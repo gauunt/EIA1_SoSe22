@@ -1,8 +1,8 @@
 /*
-Aufgabe:L08.2_Luftfahrt
+Aufgabe:L08_GenerierativeKunst
 Name: Marie Walter
 Matrikel: 271138
-Datum: 13.05.2023
+Datum: 04.05.2023
 Quellen: W3schools, letztes Semester
 */
 var A082;
@@ -20,55 +20,126 @@ var A082;
         crc2 = canvas.getContext("2d");
         let horizon = crc2.canvas.height * golden;
         let posMountains = { x: 0, y: horizon };
-        let posSnowmanBot = { x: 200, y: 590 };
-        let posSnowmanMid = { x: 200, y: 525 };
-        let posSnowmanTop = { x: 200, y: 470 };
-        let posCage = { x: 500, y: 500 };
         drawBackground();
         drawSun({ x: 100, y: 75 });
         drawCloud({ x: 500, y: 125 }, { x: 250, y: 75 });
         drawMountains(posMountains, 75, 200, "grey", "white");
         drawMountains(posMountains, 50, 150, "grey", "lightgrey");
         drawTrees({ x: 500, y: 600 });
-        drawSnowman(posSnowmanBot, posSnowmanMid, posSnowmanTop);
-        drawBirdCage(posCage);
-        drawBird();
-        drawBirds();
+        drawLandingfield({ x: 500, y: 500 });
+        drawParaglide({ x: 500, y: 500 });
+        drawBugs();
     }
-    function drawBirds() {
+    //fliegen
+    function drawBugs() {
         let canvas = document.querySelector("canvas");
-        for (let index = 0; index < 19; index++) {
+        for (let index = 0; index < 15; index++) {
             let randomX = Math.random() * (canvas.width - 1) + 1;
-            let randomY = Math.random() * ((300) - 1) + 1;
-            let randomLength = Math.random() * ((50) - 20) + 20;
+            let randomY = Math.random() * (canvas.height - 1) + 1;
+            console.log("bugs");
+            //flügel1
             crc2.save();
             crc2.translate(randomX, randomY);
             crc2.beginPath();
-            crc2.bezierCurveTo(randomLength, -10, 0, -20, 0, 0);
-            crc2.fillStyle = "black";
-            crc2.stroke();
+            crc2.ellipse(-17, 10, 7, 15, 2.2, 0, 0.1, true);
+            crc2.fillStyle = "grey";
+            crc2.fill();
             crc2.closePath();
             crc2.restore();
+            //flügel2
             crc2.save();
             crc2.translate(randomX, randomY);
             crc2.beginPath();
-            crc2.bezierCurveTo(-randomLength, -10, 0, -20, 0, 0);
+            crc2.ellipse(-10, 10, 7, 15, 3, 0, 0.1, true);
+            crc2.fillStyle = "grey";
+            crc2.fill();
+            crc2.closePath();
+            crc2.restore();
+            //körper
+            crc2.save();
+            crc2.translate(randomX, randomY);
+            crc2.beginPath();
+            crc2.ellipse(-10, 18, 10, 20, 1.1, 0, 0.1, true);
             crc2.fillStyle = "black";
-            crc2.stroke();
+            crc2.fill();
             crc2.closePath();
             crc2.restore();
         }
     }
+    //paraglider
+    function drawParaglide(_position) {
+        let canvas = document.querySelector("canvas");
+        for (let index = 0; index < 10; index++) {
+            let randomX = Math.random() * (canvas.width - 1) + 1;
+            let randomY = Math.random() * ((300) - 1) + 1;
+            console.log("paraglider");
+            //schirm
+            crc2.save();
+            crc2.scale(1.1, 1);
+            crc2.translate(randomX, randomY);
+            crc2.beginPath();
+            crc2.ellipse(20, 20, 75, 12, 0, 0, 0.1, true);
+            crc2.fillStyle = "red";
+            crc2.fill();
+            crc2.closePath();
+            crc2.restore();
+            //seil links
+            crc2.save();
+            //crc2.scale(1.2, 1);
+            crc2.beginPath();
+            crc2.translate(randomX, randomY);
+            crc2.moveTo(0, 40);
+            crc2.lineTo(50, 100);
+            crc2.closePath();
+            crc2.strokeStyle = "black";
+            crc2.stroke();
+            crc2.restore();
+            //seil rechts
+            crc2.save();
+            //crc2.scale(1.2, 1);
+            crc2.beginPath();
+            crc2.translate(randomX, randomY);
+            crc2.moveTo(-100, 35);
+            crc2.lineTo(-40, -30);
+            crc2.closePath();
+            crc2.strokeStyle = "blue";
+            crc2.stroke();
+            crc2.restore();
+            //körper Person
+            crc2.save();
+            crc2.beginPath();
+            crc2.translate(randomX, randomY);
+            crc2.moveTo(0, 0);
+            crc2.lineTo(-10, 30);
+            crc2.lineTo(10, 30);
+            crc2.closePath();
+            crc2.fillStyle = "green";
+            crc2.fill();
+            crc2.restore();
+            //kopf person
+            crc2.save();
+            crc2.beginPath();
+            crc2.translate(randomX, randomY);
+            crc2.arc(0, 0, 6, 0, 2 * Math.PI, true);
+            crc2.fillStyle = "#d1bc8a";
+            crc2.closePath();
+            crc2.fill();
+            crc2.restore();
+        }
+    }
+    //bäume
     function drawTrees(_position) {
         let canvas = document.querySelector("canvas");
-        for (let index = 0; index < 7; index++) {
+        for (let index = 0; index < 5; index++) {
             let randomX = Math.random() * (canvas.width - 1) + 1;
-            let randomY = Math.random() * ((canvas.height - 170) - 500) + 500;
+            let randomY = Math.random() * ((canvas.height - 105) - 500) + 600;
+            //baum1
             console.log("trees");
             crc2.save();
             crc2.scale(1.5, 1);
             crc2.beginPath();
-            crc2.translate(randomX, randomY);
+            //crc2.translate(randomX, randomY);
+            crc2.translate(500, 700);
             crc2.scale(2, 2);
             crc2.moveTo(20, 0);
             crc2.lineTo(-20, 0);
@@ -89,10 +160,176 @@ var A082;
             crc2.fill();
             crc2.closePath();
             crc2.restore();
+            //stamm1
             crc2.save();
             crc2.scale(1.5, 1);
             crc2.beginPath();
-            crc2.translate(randomX, randomY);
+            //crc2.translate(randomX, randomY);
+            crc2.translate(500, 700);
+            crc2.moveTo(5, 0);
+            crc2.lineTo(-5, 0);
+            crc2.lineTo(-5, 15);
+            crc2.lineTo(5, 15);
+            crc2.fillStyle = "brown";
+            crc2.fill();
+            crc2.closePath();
+            crc2.restore();
+            //baum2
+            console.log("trees");
+            crc2.save();
+            crc2.scale(1.5, 1);
+            crc2.beginPath();
+            //crc2.translate(randomX, randomY);
+            crc2.translate(400, 750);
+            crc2.scale(2, 2);
+            crc2.moveTo(20, 0);
+            crc2.lineTo(-20, 0);
+            crc2.lineTo(-15, -15);
+            crc2.lineTo(-18, -15);
+            crc2.lineTo(-10, -36);
+            crc2.lineTo(-12, -36);
+            crc2.lineTo(-5, -54);
+            crc2.lineTo(-7, -54);
+            crc2.lineTo(0, -73);
+            crc2.lineTo(7, -54);
+            crc2.lineTo(5, -54);
+            crc2.lineTo(12, -36);
+            crc2.lineTo(10, -36);
+            crc2.lineTo(18, -15);
+            crc2.lineTo(15, -15);
+            crc2.fillStyle = "darkgreen";
+            crc2.fill();
+            crc2.closePath();
+            crc2.restore();
+            //stamm2
+            crc2.save();
+            crc2.scale(1.5, 1);
+            crc2.beginPath();
+            //crc2.translate(randomX, randomY);
+            crc2.translate(400, 750);
+            crc2.moveTo(5, 0);
+            crc2.lineTo(-5, 0);
+            crc2.lineTo(-5, 15);
+            crc2.lineTo(5, 15);
+            crc2.fillStyle = "brown";
+            crc2.fill();
+            crc2.closePath();
+            crc2.restore();
+            //baum3
+            console.log("trees");
+            crc2.save();
+            crc2.scale(1.5, 1);
+            crc2.beginPath();
+            //crc2.translate(randomX, randomY);
+            crc2.translate(550, 670);
+            crc2.scale(2, 2);
+            crc2.moveTo(20, 0);
+            crc2.lineTo(-20, 0);
+            crc2.lineTo(-15, -15);
+            crc2.lineTo(-18, -15);
+            crc2.lineTo(-10, -36);
+            crc2.lineTo(-12, -36);
+            crc2.lineTo(-5, -54);
+            crc2.lineTo(-7, -54);
+            crc2.lineTo(0, -73);
+            crc2.lineTo(7, -54);
+            crc2.lineTo(5, -54);
+            crc2.lineTo(12, -36);
+            crc2.lineTo(10, -36);
+            crc2.lineTo(18, -15);
+            crc2.lineTo(15, -15);
+            crc2.fillStyle = "darkgreen";
+            crc2.fill();
+            crc2.closePath();
+            crc2.restore();
+            //stamm3
+            crc2.save();
+            crc2.scale(1.5, 1);
+            crc2.beginPath();
+            //crc2.translate(randomX, randomY);
+            crc2.translate(550, 670);
+            crc2.moveTo(5, 0);
+            crc2.lineTo(-5, 0);
+            crc2.lineTo(-5, 15);
+            crc2.lineTo(5, 15);
+            crc2.fillStyle = "brown";
+            crc2.fill();
+            crc2.closePath();
+            crc2.restore();
+            //baum4
+            console.log("trees");
+            crc2.save();
+            crc2.scale(1.5, 1);
+            crc2.beginPath();
+            //crc2.translate(randomX, randomY);
+            crc2.translate(450, 640);
+            crc2.scale(2, 2);
+            crc2.moveTo(20, 0);
+            crc2.lineTo(-20, 0);
+            crc2.lineTo(-15, -15);
+            crc2.lineTo(-18, -15);
+            crc2.lineTo(-10, -36);
+            crc2.lineTo(-12, -36);
+            crc2.lineTo(-5, -54);
+            crc2.lineTo(-7, -54);
+            crc2.lineTo(0, -73);
+            crc2.lineTo(7, -54);
+            crc2.lineTo(5, -54);
+            crc2.lineTo(12, -36);
+            crc2.lineTo(10, -36);
+            crc2.lineTo(18, -15);
+            crc2.lineTo(15, -15);
+            crc2.fillStyle = "darkgreen";
+            crc2.fill();
+            crc2.closePath();
+            crc2.restore();
+            //stamm4
+            crc2.save();
+            crc2.scale(1.5, 1);
+            crc2.beginPath();
+            //crc2.translate(randomX, randomY);
+            crc2.translate(450, 640);
+            crc2.moveTo(5, 0);
+            crc2.lineTo(-5, 0);
+            crc2.lineTo(-5, 15);
+            crc2.lineTo(5, 15);
+            crc2.fillStyle = "brown";
+            crc2.fill();
+            crc2.closePath();
+            crc2.restore();
+            //baum5
+            console.log("trees");
+            crc2.save();
+            crc2.scale(1.5, 1);
+            crc2.beginPath();
+            //crc2.translate(randomX, randomY);
+            crc2.translate(950, 700);
+            crc2.scale(2, 2);
+            crc2.moveTo(20, 0);
+            crc2.lineTo(-20, 0);
+            crc2.lineTo(-15, -15);
+            crc2.lineTo(-18, -15);
+            crc2.lineTo(-10, -36);
+            crc2.lineTo(-12, -36);
+            crc2.lineTo(-5, -54);
+            crc2.lineTo(-7, -54);
+            crc2.lineTo(0, -73);
+            crc2.lineTo(7, -54);
+            crc2.lineTo(5, -54);
+            crc2.lineTo(12, -36);
+            crc2.lineTo(10, -36);
+            crc2.lineTo(18, -15);
+            crc2.lineTo(15, -15);
+            crc2.fillStyle = "darkgreen";
+            crc2.fill();
+            crc2.closePath();
+            crc2.restore();
+            //stamm5
+            crc2.save();
+            crc2.scale(1.5, 1);
+            crc2.beginPath();
+            //crc2.translate(randomX, randomY);
+            crc2.translate(950, 700);
             crc2.moveTo(5, 0);
             crc2.lineTo(-5, 0);
             crc2.lineTo(-5, 15);
@@ -103,262 +340,30 @@ var A082;
             crc2.restore();
         }
     }
-    function drawBird() {
-        //kopf
-        crc2.save();
-        crc2.translate(1008, 482);
-        crc2.beginPath();
-        crc2.arc(0, 0, 9, 0, 2 * Math.PI);
-        crc2.fillStyle = "blue";
-        crc2.fill();
-        crc2.closePath();
-        crc2.restore();
-        //schnabel
-        crc2.save();
-        crc2.translate(210, -70);
-        crc2.beginPath();
-        crc2.moveTo(805, 550);
-        crc2.lineTo(805, 555);
-        crc2.lineTo(820, 553);
-        crc2.fillStyle = "blue";
-        crc2.fill();
-        crc2.closePath();
-        crc2.restore();
-        //Füße
-        crc2.save();
-        crc2.translate(980, 510);
-        crc2.beginPath();
-        crc2.moveTo(0, 0);
-        crc2.lineTo(0, 10);
-        crc2.fillStyle = "blue";
-        crc2.stroke();
-        crc2.closePath();
-        crc2.restore();
-        crc2.save();
-        crc2.translate(985, 512);
-        crc2.beginPath();
-        crc2.moveTo(0, 0);
-        crc2.lineTo(0, 10);
-        crc2.fillStyle = "blue";
-        crc2.stroke();
-        crc2.closePath();
-        crc2.restore();
-        //body
-        crc2.save();
-        crc2.translate(1000, 482);
-        crc2.beginPath();
-        crc2.ellipse(-10, 18, 10, 20, 1.1, 0, 0.1, true);
-        crc2.fillStyle = "blue";
-        crc2.fill();
-        crc2.closePath();
-        crc2.restore();
-        //auge
-        crc2.save();
-        crc2.translate(1010, 482);
-        crc2.beginPath();
-        crc2.arc(2, -2, 1.2, 0, 2 * Math.PI);
-        crc2.fillStyle = "black";
-        crc2.fill();
-        crc2.closePath();
-        crc2.restore();
-        //Fußunten
-        crc2.save();
-        crc2.translate(980, 520);
-        crc2.beginPath();
-        crc2.moveTo(0, 0);
-        crc2.lineTo(8, 0);
-        crc2.fillStyle = "black";
-        crc2.stroke();
-        crc2.closePath();
-        crc2.restore();
-        //Fußunten
-        crc2.save();
-        crc2.translate(985, 522);
-        crc2.beginPath();
-        crc2.moveTo(0, 0);
-        crc2.lineTo(8, 0);
-        crc2.fillStyle = "black";
-        crc2.stroke();
-        crc2.closePath();
-        crc2.restore();
-        //flügel
-        crc2.save();
-        crc2.translate(981, 510);
-        crc2.rotate(2.8);
-        crc2.beginPath();
-        crc2.moveTo(0, 0);
-        crc2.lineTo(20, 0);
-        crc2.lineTo(23, 4);
-        crc2.lineTo(0, 13);
-        crc2.lineTo(0, 0);
-        crc2.fillStyle = "blue";
-        crc2.fill();
-        crc2.closePath();
-        crc2.restore();
-    }
-    function drawBirdCage(_position) {
-        crc2.save();
-        crc2.shadowBlur = 2;
-        crc2.shadowColor = "black";
-        crc2.beginPath();
-        crc2.rect(995, 550, 10, 100);
-        crc2.closePath();
-        crc2.fillStyle = "#8B4513";
-        crc2.fill();
-        crc2.restore();
-        crc2.save();
-        crc2.shadowBlur = 2;
-        crc2.shadowColor = "black";
-        crc2.beginPath();
-        crc2.rect(950, 450, 100, 100);
-        crc2.closePath();
-        crc2.fillStyle = "#8B4513";
-        crc2.fill();
-        crc2.restore();
-        crc2.save();
-        crc2.shadowBlur = 2;
-        crc2.shadowColor = "black";
-        crc2.beginPath();
-        crc2.arc(1000, 490, 20, 0, 2 * Math.PI);
-        crc2.closePath();
-        crc2.fillStyle = "#33140A";
-        crc2.fill();
-        crc2.restore();
-        crc2.save();
-        crc2.shadowBlur = 2;
-        crc2.shadowColor = "black";
-        crc2.beginPath();
-        crc2.moveTo(1060, 450);
-        crc2.lineTo(940, 450);
-        crc2.lineTo(1000, 380);
-        crc2.closePath();
-        crc2.fillStyle = "#33140A";
-        crc2.fill();
-        crc2.restore();
-        crc2.save();
-        crc2.shadowBlur = 2;
-        crc2.shadowColor = "black";
-        crc2.beginPath();
-        crc2.rect(960, 520, 80, 10);
-        crc2.closePath();
-        crc2.fillStyle = "#33140A";
-        crc2.fill();
-        crc2.restore();
-    }
-    function drawSnowman(_positionBot, _positionMid, _positionTop) {
-        let r1 = 50;
-        let r2 = 40;
-        let r3 = 30;
-        crc2.save();
-        crc2.shadowBlur = 2;
-        crc2.shadowColor = "lightgray";
-        crc2.translate(_positionBot.x, _positionBot.y);
-        crc2.beginPath();
-        crc2.arc(0, 0, r1, 0, 2 * Math.PI);
-        crc2.fillStyle = "white";
-        crc2.fill();
-        crc2.closePath();
-        crc2.restore();
-        crc2.save();
-        crc2.shadowBlur = 2;
-        crc2.shadowColor = "lightgray";
-        crc2.translate(_positionMid.x, _positionMid.y);
-        crc2.beginPath();
-        crc2.arc(0, 0, r2, 0, 2 * Math.PI);
-        crc2.fillStyle = "white";
-        crc2.fill();
-        crc2.closePath();
-        crc2.restore();
-        crc2.save();
-        crc2.shadowBlur = 2;
-        crc2.shadowColor = "lightgray";
-        crc2.translate(_positionTop.x, _positionTop.y);
-        crc2.beginPath();
-        crc2.arc(0, 0, r3, 0, 2 * Math.PI);
-        crc2.fillStyle = "white";
-        crc2.fill();
-        crc2.closePath();
-        crc2.restore();
-        crc2.save();
-        crc2.translate(200, 453);
-        crc2.beginPath();
-        crc2.bezierCurveTo(-10, 10, 0, 20, 10, 10);
-        crc2.stroke();
-        crc2.closePath();
-        crc2.restore();
-        crc2.save();
-        crc2.translate(_positionTop.x, _positionTop.y);
-        crc2.beginPath();
-        crc2.arc(8, -10, 2, 0, 2 * Math.PI);
-        crc2.fillStyle = "black";
-        crc2.fill();
-        crc2.closePath();
-        crc2.restore();
-        crc2.save();
-        crc2.translate(_positionTop.x, _positionTop.y);
-        crc2.beginPath();
-        crc2.arc(-8, -10, 2, 0, 2 * Math.PI);
-        crc2.fillStyle = "black";
-        crc2.fill();
-        crc2.closePath();
-        crc2.restore();
-        crc2.save();
-        crc2.translate(_positionMid.x, _positionMid.y);
-        crc2.beginPath();
-        crc2.arc(0, -20, 2, 0, 2 * Math.PI);
-        crc2.fillStyle = "black";
-        crc2.fill();
-        crc2.closePath();
-        crc2.restore();
-        crc2.save();
-        crc2.translate(_positionMid.x, _positionMid.y);
-        crc2.beginPath();
-        crc2.arc(0, 10, 2, 0, 2 * Math.PI);
-        crc2.fillStyle = "black";
-        crc2.fill();
-        crc2.closePath();
-        crc2.restore();
-        crc2.save();
-        crc2.translate(_positionMid.x, _positionMid.y);
-        crc2.beginPath();
-        crc2.arc(0, 50, 2, 0, 2 * Math.PI);
-        crc2.fillStyle = "black";
-        crc2.fill();
-        crc2.closePath();
-        crc2.restore();
-        crc2.save();
-        crc2.translate(_positionMid.x, _positionMid.y);
-        crc2.beginPath();
-        crc2.arc(0, 50, 2, 0, 2 * Math.PI);
-        crc2.fillStyle = "black";
-        crc2.fill();
-        crc2.closePath();
-        crc2.restore();
-        crc2.save();
-        crc2.shadowBlur = 2;
-        crc2.shadowColor = "lightgray";
-        crc2.beginPath();
-        crc2.moveTo(160, 520);
-        crc2.lineTo(130, 480);
-        crc2.stroke();
-        crc2.closePath();
-        crc2.restore();
-        crc2.save();
-        crc2.shadowBlur = 5;
-        crc2.shadowColor = "lightgray";
-        crc2.beginPath();
-        crc2.moveTo(240, 520);
-        crc2.lineTo(270, 480);
-        crc2.stroke();
-        crc2.closePath();
-        crc2.restore();
+    //Landeplatz
+    function drawLandingfield(_position) {
+        let canvas = document.querySelector("canvas");
+        for (let index = 0; index < 7; index++) {
+            crc2.save();
+            crc2.scale(1.5, 1);
+            crc2.beginPath();
+            crc2.translate(600, 600);
+            crc2.moveTo(30, 10);
+            crc2.lineTo(300, 10);
+            crc2.lineTo(250, 210);
+            crc2.lineTo(-30, 210);
+            crc2.fillStyle = "grey";
+            crc2.fill();
+            crc2.closePath();
+            crc2.restore();
+        }
     }
     function drawBackground() {
         console.log("Background");
         let gradient = crc2.createLinearGradient(0, 0, 0, crc2.canvas.height);
         gradient.addColorStop(0, "lightblue");
-        gradient.addColorStop(golden, "white");
-        gradient.addColorStop(1, "lightgray");
+        gradient.addColorStop(0.5, "white");
+        gradient.addColorStop(1, "green");
         crc2.fillStyle = gradient;
         crc2.fillRect(0, 0, crc2.canvas.width, crc2.canvas.height);
     }
@@ -376,6 +381,7 @@ var A082;
         crc2.fill();
         crc2.restore();
     }
+    //wolke
     function drawCloud(_position, _size) {
         console.log("Cloud", _position, _size);
         let nParticles = 80;
@@ -398,6 +404,7 @@ var A082;
         }
         crc2.restore();
     }
+    //Berge
     function drawMountains(_position, _min, _max, _colorLow, _colorHigh) {
         console.log("Mountains", _position, _min, _max);
         let stepMin = 50;

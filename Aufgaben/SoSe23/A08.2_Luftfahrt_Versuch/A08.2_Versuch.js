@@ -7,6 +7,9 @@ Quellen: W3schools, letztes Semester
 */
 var A082;
 (function (A082) {
+    let h;
+    let s;
+    let l;
     window.addEventListener("load", handleLoad);
     let canvas;
     let crc2;
@@ -26,8 +29,12 @@ var A082;
         drawMountains(posMountains, 75, 200, "grey", "white");
         drawMountains(posMountains, 50, 150, "grey", "lightgrey");
         drawTrees({ x: 500, y: 600 });
+        drawLandingfield({ x: 500, y: 500 });
+        drawParaglide({ x: 190, y: 90 });
+        drawParaglide({ x: 150, y: 250 });
+        drawParaglide({ x: 520, y: 280 });
+        drawParaglide({ x: 400, y: 100 });
         drawBugs();
-        drawLandingfield();
     }
     function drawBugs() {
         let canvas = document.querySelector("canvas");
@@ -63,23 +70,47 @@ var A082;
             crc2.restore();
         }
     }
-    function drawLandingfield() {
-        let canvas = document.querySelector("canvas");
-        for (let index = 0; index < 7; index++) {
-            crc2.save();
-            crc2.scale(1.5, 1);
-            crc2.beginPath();
-            crc2.translate(800, 600);
-            crc2.moveTo(30, 0);
-            crc2.lineTo(300, 0);
-            crc2.lineTo(250, 200);
-            crc2.lineTo(-30, 200);
-            crc2.fillStyle = "grey";
-            crc2.fill();
-            crc2.closePath();
-            crc2.restore();
-        }
+    function drawParaglide(_position) {
+        h = Math.random() * 360;
+        s = Math.random() * 100;
+        l = Math.random() * 100;
+        crc2.save();
+        crc2.translate(_position.x, _position.y);
+        crc2.beginPath();
+        crc2.moveTo(0, 10);
+        crc2.lineTo(20, 30);
+        crc2.closePath();
+        crc2.strokeStyle = "black";
+        crc2.stroke();
+        //seile
+        crc2.beginPath();
+        crc2.moveTo(0, 18);
+        crc2.lineTo(20, -15);
+        crc2.closePath();
+        crc2.strokeStyle = "black";
+        crc2.stroke();
+        //schirm
+        crc2.beginPath();
+        crc2.ellipse(0, -18, 25, 8, 0, 0, 2 * Math.PI, true);
+        crc2.closePath();
+        crc2.fillStyle = "hsl(" + h + "," + s + "% , " + l + "%)";
+        crc2.fill();
+        //körper person
+        crc2.beginPath();
+        crc2.moveTo(0, 0);
+        crc2.lineTo(-10, 30);
+        crc2.lineTo(10, 30);
+        crc2.closePath();
+        crc2.fillStyle = "hsl(" + h + "," + s + "% , " + l + "%)";
+        crc2.fill();
+        crc2.beginPath();
+        crc2.arc(0, 0, 6, 0, 2 * Math.PI, true);
+        crc2.fillStyle = "#d1bc8a";
+        crc2.closePath();
+        crc2.fill();
+        crc2.restore();
     }
+    ;
     function drawTrees(_position) {
         let canvas = document.querySelector("canvas");
         for (let index = 0; index < 7; index++) {
@@ -119,6 +150,23 @@ var A082;
             crc2.lineTo(-5, 15);
             crc2.lineTo(5, 15);
             crc2.fillStyle = "brown";
+            crc2.fill();
+            crc2.closePath();
+            crc2.restore();
+        }
+    }
+    function drawLandingfield(_position) {
+        let canvas = document.querySelector("canvas");
+        for (let index = 0; index < 7; index++) {
+            crc2.save();
+            crc2.scale(1.5, 1);
+            crc2.beginPath();
+            crc2.translate(800, 600);
+            crc2.moveTo(30, 0);
+            crc2.lineTo(300, 0);
+            crc2.lineTo(250, 200);
+            crc2.lineTo(-30, 200);
+            crc2.fillStyle = "grey";
             crc2.fill();
             crc2.closePath();
             crc2.restore();

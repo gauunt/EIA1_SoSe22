@@ -12,10 +12,6 @@ namespace A082 {
         y: number;
     }
 
-    let h: number;
-    let s: number;
-    let l: number;
-
     window.addEventListener("load", handleLoad);
     let canvas: HTMLCanvasElement;
     let crc2: CanvasRenderingContext2D;
@@ -37,17 +33,20 @@ namespace A082 {
         drawMountains(posMountains, 50, 150, "grey", "lightgrey");
         drawTrees({ x: 500, y: 600 });
         drawLandingfield({x: 500, y: 500});
-        drawParaglide();
+        drawParaglide({x: 500, y:500});
         drawBugs();
     }
 
+    //fliegen
     function drawBugs(): void {
         let canvas: HTMLCanvasElement | null = document.querySelector("canvas");
-        for (let index: number = 0; index < 19; index++) {
+        for (let index: number = 0; index < 15; index++) {
             let randomX: number = Math.random() * (canvas.width - 1) + 1;
             let randomY: number = Math.random() * (canvas.height - 1) + 1;
 
-        //wing1
+        console.log("bugs")
+
+        //flügel1
         crc2.save();
         crc2.translate(randomX, randomY);
         crc2.beginPath();
@@ -57,7 +56,7 @@ namespace A082 {
         crc2.closePath();
         crc2.restore();
 
-        //wing2
+        //flügel2
         crc2.save();
         crc2.translate(randomX, randomY);
         crc2.beginPath();
@@ -67,7 +66,7 @@ namespace A082 {
         crc2.closePath();
         crc2.restore();
 
-         //body
+         //körper
          crc2.save();
          crc2.translate(randomX, randomY);
          crc2.beginPath();
@@ -79,37 +78,89 @@ namespace A082 {
         }
     }
 
-    
-
+    //paraglider
     function drawParaglide (_position: VectorBackground): void{
         let canvas: HTMLCanvasElement | null = document.querySelector("canvas");
-        for (let index: number = 0; index < 7; index++) {
+        for (let index: number = 0; index < 10; index++) {
             let randomX: number = Math.random() * (canvas.width - 1) + 1;
-            let randomY: number = Math.random() * ((canvas.height - 170) - 500) + 500;
+            let randomY: number = Math.random() * ((300) - 1) + 1;
 
             console.log("paraglider")
-
+            
+            //schirm
             crc2.save();
+            crc2.scale(1.1, 1);
             crc2.translate(randomX, randomY);
             crc2.beginPath();
-            crc2.ellipse(-10, 18, 10, 20, 1.1, 0, 0.1, true);
+            crc2.ellipse(20, 20, 75, 12, 0, 0, 0.1, true);
             crc2.fillStyle = "red";
             crc2.fill();
             crc2.closePath();
             crc2.restore();
-    }}
 
+            //seil links
+            crc2.save();
+            //crc2.scale(1.2, 1);
+            crc2.beginPath();
+            crc2.translate(randomX, randomY);
+            crc2.moveTo(0, 40);
+            crc2.lineTo(50, 100);
+            crc2.closePath();
+            crc2.strokeStyle = "black";
+            crc2.stroke();
+            crc2.restore();
+
+            //seil rechts
+            crc2.save();
+            //crc2.scale(1.2, 1);
+            crc2.beginPath();
+            crc2.translate(randomX, randomY);
+            crc2.moveTo(-100, 35);
+            crc2.lineTo(-40, -30);
+            crc2.closePath();
+            crc2.strokeStyle = "blue";
+            crc2.stroke();
+            crc2.restore();
+
+            //körper Person
+            crc2.save();
+            crc2.beginPath();
+            crc2.translate(randomX, randomY);
+            crc2.moveTo(0, 0);
+            crc2.lineTo(-10, 30);
+            crc2.lineTo(10, 30);
+            crc2.closePath();
+            crc2.fillStyle = "green";
+            crc2.fill();
+            crc2.restore();
+
+            //kopf person
+            crc2.save();
+            crc2.beginPath();
+            crc2.translate(randomX, randomY);
+            crc2.arc(0, 0, 6, 0, 2*Math.PI, true); 
+            crc2.fillStyle = "#d1bc8a";
+            crc2.closePath();
+            crc2.fill();
+            crc2.restore();
+
+        }
+    }
+
+    //bäume
     function drawTrees(_position: VectorBackground): void {
         let canvas: HTMLCanvasElement | null = document.querySelector("canvas");
-        for (let index: number = 0; index < 7; index++) {
+        for (let index: number = 0; index < 5; index++) {
             let randomX: number = Math.random() * (canvas.width - 1) + 1;
-            let randomY: number = Math.random() * ((canvas.height - 170) - 500) + 500;
+            let randomY: number = Math.random() * ((canvas.height - 105) - 500) + 600;
 
+            //baum1
             console.log("trees");
             crc2.save();
             crc2.scale(1.5, 1);
             crc2.beginPath();
-            crc2.translate(randomX, randomY);
+            //crc2.translate(randomX, randomY);
+            crc2.translate(500, 700);
             crc2.scale(2, 2);
             crc2.moveTo(20, 0);
             crc2.lineTo(-20, 0);
@@ -131,10 +182,187 @@ namespace A082 {
             crc2.closePath();
             crc2.restore();
 
+            //stamm1
             crc2.save();
             crc2.scale(1.5, 1);
             crc2.beginPath();
-            crc2.translate(randomX, randomY);
+            //crc2.translate(randomX, randomY);
+            crc2.translate(500, 700);
+            crc2.moveTo(5, 0);
+            crc2.lineTo(-5, 0);
+            crc2.lineTo(-5, 15);
+            crc2.lineTo(5, 15);
+            crc2.fillStyle = "brown";
+            crc2.fill();
+            crc2.closePath();
+            crc2.restore();
+
+
+            //baum2
+            console.log("trees");
+            crc2.save();
+            crc2.scale(1.5, 1);
+            crc2.beginPath();
+            //crc2.translate(randomX, randomY);
+            crc2.translate(400, 750);
+            crc2.scale(2, 2);
+            crc2.moveTo(20, 0);
+            crc2.lineTo(-20, 0);
+            crc2.lineTo(-15, -15);
+            crc2.lineTo(-18, -15);
+            crc2.lineTo(-10, -36);
+            crc2.lineTo(-12, -36);
+            crc2.lineTo(-5, -54);
+            crc2.lineTo(-7, -54);
+            crc2.lineTo(0, -73);
+            crc2.lineTo(7, -54);
+            crc2.lineTo(5, -54);
+            crc2.lineTo(12, -36);
+            crc2.lineTo(10, -36);
+            crc2.lineTo(18, -15);
+            crc2.lineTo(15, -15);
+            crc2.fillStyle = "darkgreen";
+            crc2.fill();
+            crc2.closePath();
+            crc2.restore();
+
+            //stamm2
+            crc2.save();
+            crc2.scale(1.5, 1);
+            crc2.beginPath();
+            //crc2.translate(randomX, randomY);
+            crc2.translate(400, 750);
+            crc2.moveTo(5, 0);
+            crc2.lineTo(-5, 0);
+            crc2.lineTo(-5, 15);
+            crc2.lineTo(5, 15);
+            crc2.fillStyle = "brown";
+            crc2.fill();
+            crc2.closePath();
+            crc2.restore();
+
+
+            //baum3
+            console.log("trees");
+            crc2.save();
+            crc2.scale(1.5, 1);
+            crc2.beginPath();
+            //crc2.translate(randomX, randomY);
+            crc2.translate(550, 670);
+            crc2.scale(2, 2);
+            crc2.moveTo(20, 0);
+            crc2.lineTo(-20, 0);
+            crc2.lineTo(-15, -15);
+            crc2.lineTo(-18, -15);
+            crc2.lineTo(-10, -36);
+            crc2.lineTo(-12, -36);
+            crc2.lineTo(-5, -54);
+            crc2.lineTo(-7, -54);
+            crc2.lineTo(0, -73);
+            crc2.lineTo(7, -54);
+            crc2.lineTo(5, -54);
+            crc2.lineTo(12, -36);
+            crc2.lineTo(10, -36);
+            crc2.lineTo(18, -15);
+            crc2.lineTo(15, -15);
+            crc2.fillStyle = "darkgreen";
+            crc2.fill();
+            crc2.closePath();
+            crc2.restore();
+
+            //stamm3
+            crc2.save();
+            crc2.scale(1.5, 1);
+            crc2.beginPath();
+            //crc2.translate(randomX, randomY);
+            crc2.translate(550, 670);
+            crc2.moveTo(5, 0);
+            crc2.lineTo(-5, 0);
+            crc2.lineTo(-5, 15);
+            crc2.lineTo(5, 15);
+            crc2.fillStyle = "brown";
+            crc2.fill();
+            crc2.closePath();
+            crc2.restore();
+
+            //baum4
+            console.log("trees");
+            crc2.save();
+            crc2.scale(1.5, 1);
+            crc2.beginPath();
+            //crc2.translate(randomX, randomY);
+            crc2.translate(450, 640);
+            crc2.scale(2, 2);
+            crc2.moveTo(20, 0);
+            crc2.lineTo(-20, 0);
+            crc2.lineTo(-15, -15);
+            crc2.lineTo(-18, -15);
+            crc2.lineTo(-10, -36);
+            crc2.lineTo(-12, -36);
+            crc2.lineTo(-5, -54);
+            crc2.lineTo(-7, -54);
+            crc2.lineTo(0, -73);
+            crc2.lineTo(7, -54);
+            crc2.lineTo(5, -54);
+            crc2.lineTo(12, -36);
+            crc2.lineTo(10, -36);
+            crc2.lineTo(18, -15);
+            crc2.lineTo(15, -15);
+            crc2.fillStyle = "darkgreen";
+            crc2.fill();
+            crc2.closePath();
+            crc2.restore();
+
+            //stamm4
+            crc2.save();
+            crc2.scale(1.5, 1);
+            crc2.beginPath();
+            //crc2.translate(randomX, randomY);
+            crc2.translate(450, 640);
+            crc2.moveTo(5, 0);
+            crc2.lineTo(-5, 0);
+            crc2.lineTo(-5, 15);
+            crc2.lineTo(5, 15);
+            crc2.fillStyle = "brown";
+            crc2.fill();
+            crc2.closePath();
+            crc2.restore();
+
+
+            //baum5
+            console.log("trees");
+            crc2.save();
+            crc2.scale(1.5, 1);
+            crc2.beginPath();
+            //crc2.translate(randomX, randomY);
+            crc2.translate(950, 700);
+            crc2.scale(2, 2);
+            crc2.moveTo(20, 0);
+            crc2.lineTo(-20, 0);
+            crc2.lineTo(-15, -15);
+            crc2.lineTo(-18, -15);
+            crc2.lineTo(-10, -36);
+            crc2.lineTo(-12, -36);
+            crc2.lineTo(-5, -54);
+            crc2.lineTo(-7, -54);
+            crc2.lineTo(0, -73);
+            crc2.lineTo(7, -54);
+            crc2.lineTo(5, -54);
+            crc2.lineTo(12, -36);
+            crc2.lineTo(10, -36);
+            crc2.lineTo(18, -15);
+            crc2.lineTo(15, -15);
+            crc2.fillStyle = "darkgreen";
+            crc2.fill();
+            crc2.closePath();
+            crc2.restore();
+
+            //stamm5
+            crc2.save();
+            crc2.scale(1.5, 1);
+            crc2.beginPath();
+            //crc2.translate(randomX, randomY);
+            crc2.translate(950, 700);
             crc2.moveTo(5, 0);
             crc2.lineTo(-5, 0);
             crc2.lineTo(-5, 15);
@@ -146,6 +374,7 @@ namespace A082 {
         }
     }
 
+    //Landeplatz
     function drawLandingfield(_position: VectorBackground): void{
         let canvas: HTMLCanvasElement | null = document.querySelector("canvas");
         for (let index: number = 0; index < 7; index++) {
@@ -153,11 +382,11 @@ namespace A082 {
          crc2.save();
             crc2.scale(1.5, 1);
             crc2.beginPath();
-            crc2.translate(800, 600);
-            crc2.moveTo(30, 0);
-            crc2.lineTo(300, 0);
-            crc2.lineTo(250, 200);
-            crc2.lineTo(-30, 200);
+            crc2.translate(600, 600);
+            crc2.moveTo(30, 10);
+            crc2.lineTo(300, 10);
+            crc2.lineTo(250, 210);
+            crc2.lineTo(-30, 210);
             crc2.fillStyle = "grey";
             crc2.fill();
             crc2.closePath();
@@ -197,6 +426,7 @@ namespace A082 {
     }
 
 
+    //wolke
     function drawCloud(_position: VectorBackground, _size: VectorBackground): void {
         console.log("Cloud", _position, _size);
 
@@ -225,7 +455,7 @@ namespace A082 {
     }
 
 
-
+    //Berge
     function drawMountains(_position: VectorBackground, _min: number, _max: number, _colorLow: string, _colorHigh: string): void {
         console.log("Mountains", _position, _min, _max);
         let stepMin: number = 50;

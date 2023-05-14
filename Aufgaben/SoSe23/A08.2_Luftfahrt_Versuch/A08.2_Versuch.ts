@@ -99,6 +99,7 @@ namespace A082 {
         crc2.strokeStyle = "black";
         crc2.stroke();
 
+        //seile
         crc2.beginPath();
         crc2.moveTo(0, 18);
         crc2.lineTo(20, -15);
@@ -106,12 +107,14 @@ namespace A082 {
         crc2.strokeStyle = "black";
         crc2.stroke();
 
+        //schirm
         crc2.beginPath();
         crc2.ellipse(0, -18, 25, 8, 0, 0, 2*Math.PI, true);
         crc2.closePath();
         crc2.fillStyle = "hsl(" + h + "," + s + "% , " + l + "%)";
         crc2.fill();
 
+        //körper person
         crc2.beginPath();
         crc2.moveTo(0, 0);
         crc2.lineTo(-10, 30);
