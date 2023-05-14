@@ -1,8 +1,8 @@
 /*
-Aufgabe:L08_GenerierativeKunst
+Aufgabe:L08.2_Luftfahrt
 Name: Marie Walter
 Matrikel: 271138
-Datum: 04.05.2023
+Datum: 13.05.2023
 Quellen: W3schools, letztes Semester
 */
 
@@ -29,7 +29,7 @@ namespace A082 {
         drawBackground();
         drawSun({ x: 100, y: 75 });
         drawCloud({ x: 500, y: 125 }, { x: 250, y: 75 });
-        drawMountains(posMountains, 75, 200, "grey", "white");
+        drawMountains(posMountains, 75, 200, "grey", "lightgrey");
         drawMountains(posMountains, 50, 150, "grey", "lightgrey");
         drawTrees({ x: 500, y: 600 });
         drawLandingfield({x: 500, y: 500});
@@ -37,7 +37,7 @@ namespace A082 {
         drawBugs();
     }
 
-    //fliegen
+    //Fliegen
     function drawBugs(): void {
         let canvas: HTMLCanvasElement | null = document.querySelector("canvas");
         for (let index: number = 0; index < 15; index++) {
@@ -78,6 +78,11 @@ namespace A082 {
         }
     }
 
+    //färbt in random color (benutzt bei Paragliders und Körper Personen)
+    function randomColor() {
+        return '#' + Math.floor(Math.random()*0xffffff).toString(16);
+    }
+
     //paraglider
     function drawParaglide (_position: VectorBackground): void{
         let canvas: HTMLCanvasElement | null = document.querySelector("canvas");
@@ -93,7 +98,7 @@ namespace A082 {
             crc2.translate(randomX, randomY);
             crc2.beginPath();
             crc2.ellipse(20, 20, 75, 12, 0, 0, 0.1, true);
-            crc2.fillStyle = "red";
+            crc2.fillStyle = randomColor();
             crc2.fill();
             crc2.closePath();
             crc2.restore();
@@ -130,7 +135,7 @@ namespace A082 {
             crc2.lineTo(-10, 30);
             crc2.lineTo(10, 30);
             crc2.closePath();
-            crc2.fillStyle = "green";
+            crc2.fillStyle = randomColor();
             crc2.fill();
             crc2.restore();
 
