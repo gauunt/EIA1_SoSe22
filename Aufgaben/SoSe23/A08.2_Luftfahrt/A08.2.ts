@@ -1,8 +1,8 @@
 /*
-Aufgabe:L08.2_Luftfahrt
+Aufgabe:L08_GenerierativeKunst
 Name: Marie Walter
 Matrikel: 271138
-Datum: 13.05.2023
+Datum: 04.05.2023
 Quellen: W3schools, letztes Semester
 */
 
@@ -11,6 +11,10 @@ namespace A082 {
         x: number;
         y: number;
     }
+
+    let h: number;
+    let s: number;
+    let l: number;
 
     window.addEventListener("load", handleLoad);
     let canvas: HTMLCanvasElement;
@@ -26,47 +30,74 @@ namespace A082 {
         crc2 = <CanvasRenderingContext2D>canvas.getContext("2d");
         let horizon: number = crc2.canvas.height * golden;
         let posMountains: VectorBackground = { x: 0, y: horizon };
-        let posSnowmanBot: VectorBackground = { x: 200, y: 590 };
-        let posSnowmanMid: VectorBackground = { x: 200, y: 525 };
-        let posSnowmanTop: VectorBackground = { x: 200, y: 470 };
-        let posCage: VectorBackground = { x: 500, y: 500 };
         drawBackground();
         drawSun({ x: 100, y: 75 });
         drawCloud({ x: 500, y: 125 }, { x: 250, y: 75 });
         drawMountains(posMountains, 75, 200, "grey", "white");
         drawMountains(posMountains, 50, 150, "grey", "lightgrey");
         drawTrees({ x: 500, y: 600 });
-        drawSnowman(posSnowmanBot, posSnowmanMid, posSnowmanTop);
-        drawBirdCage(posCage);
-        drawBird();
-        drawBirds();
+        drawLandingfield({x: 500, y: 500});
+        drawParaglide();
+        drawBugs();
     }
 
-    function drawBirds(): void {
+    function drawBugs(): void {
         let canvas: HTMLCanvasElement | null = document.querySelector("canvas");
         for (let index: number = 0; index < 19; index++) {
             let randomX: number = Math.random() * (canvas.width - 1) + 1;
-            let randomY: number = Math.random() * ((300) - 1) + 1;
-            let randomLength: number = Math.random() * ((50) - 20) + 20;
-            crc2.save();
-            crc2.translate(randomX, randomY);
-            crc2.beginPath();
-            crc2.bezierCurveTo(randomLength, -10, 0, -20, 0, 0);
-            crc2.fillStyle = "black";
-            crc2.stroke();
-            crc2.closePath();
-            crc2.restore();
+            let randomY: number = Math.random() * (canvas.height - 1) + 1;
+
+        //wing1
+        crc2.save();
+        crc2.translate(randomX, randomY);
+        crc2.beginPath();
+        crc2.ellipse(-17, 10, 7, 15, 2.2, 0, 0.1, true);
+        crc2.fillStyle = "grey";
+        crc2.fill();
+        crc2.closePath();
+        crc2.restore();
+
+        //wing2
+        crc2.save();
+        crc2.translate(randomX, randomY);
+        crc2.beginPath();
+        crc2.ellipse(-10, 10, 7, 15, 3, 0, 0.1, true);
+        crc2.fillStyle = "grey";
+        crc2.fill();
+        crc2.closePath();
+        crc2.restore();
+
+         //body
+         crc2.save();
+         crc2.translate(randomX, randomY);
+         crc2.beginPath();
+         crc2.ellipse(-10, 18, 10, 20, 1.1, 0, 0.1, true);
+         crc2.fillStyle = "black";
+         crc2.fill();
+         crc2.closePath();
+         crc2.restore();
+        }
+    }
+
+    
+
+    function drawParaglide (_position: VectorBackground): void{
+        let canvas: HTMLCanvasElement | null = document.querySelector("canvas");
+        for (let index: number = 0; index < 7; index++) {
+            let randomX: number = Math.random() * (canvas.width - 1) + 1;
+            let randomY: number = Math.random() * ((canvas.height - 170) - 500) + 500;
+
+            console.log("paraglider")
 
             crc2.save();
             crc2.translate(randomX, randomY);
             crc2.beginPath();
-            crc2.bezierCurveTo(-randomLength, -10, 0, -20, 0, 0);
-            crc2.fillStyle = "black";
-            crc2.stroke();
+            crc2.ellipse(-10, 18, 10, 20, 1.1, 0, 0.1, true);
+            crc2.fillStyle = "red";
+            crc2.fill();
             crc2.closePath();
             crc2.restore();
-        }
-    }
+    }}
 
     function drawTrees(_position: VectorBackground): void {
         let canvas: HTMLCanvasElement | null = document.querySelector("canvas");
@@ -113,305 +144,35 @@ namespace A082 {
             crc2.closePath();
             crc2.restore();
         }
-
-
-
     }
 
+    function drawLandingfield(_position: VectorBackground): void{
+        let canvas: HTMLCanvasElement | null = document.querySelector("canvas");
+        for (let index: number = 0; index < 7; index++) {
 
-
-    function drawBird(): void {
-        //kopf
-        crc2.save();
-        crc2.translate(1008, 482);
-        crc2.beginPath();
-        crc2.arc(0, 0, 9, 0, 2 * Math.PI);
-        crc2.fillStyle = "blue";
-        crc2.fill();
-        crc2.closePath();
-        crc2.restore();
-
-
-        //schnabel
-        crc2.save();
-        crc2.translate(210, -70);
-        crc2.beginPath();
-        crc2.moveTo(805, 550);
-        crc2.lineTo(805, 555);
-        crc2.lineTo(820, 553);
-        crc2.fillStyle = "blue";
-        crc2.fill();
-        crc2.closePath();
-        crc2.restore();
-
-
-        //Füße
-        crc2.save();
-        crc2.translate(980, 510);
-        crc2.beginPath();
-        crc2.moveTo(0, 0);
-        crc2.lineTo(0, 10);
-        crc2.fillStyle = "blue";
-        crc2.stroke();
-        crc2.closePath();
-        crc2.restore();
-
-        crc2.save();
-        crc2.translate(985, 512);
-        crc2.beginPath();
-        crc2.moveTo(0, 0);
-        crc2.lineTo(0, 10);
-        crc2.fillStyle = "blue";
-        crc2.stroke();
-        crc2.closePath();
-        crc2.restore();
-
-        //body
-        crc2.save();
-        crc2.translate(1000, 482);
-        crc2.beginPath();
-        crc2.ellipse(-10, 18, 10, 20, 1.1, 0, 0.1, true);
-        crc2.fillStyle = "blue";
-        crc2.fill();
-        crc2.closePath();
-        crc2.restore();
-
-        //auge
-        crc2.save();
-        crc2.translate(1010, 482);
-        crc2.beginPath();
-        crc2.arc(2, -2, 1.2, 0, 2 * Math.PI);
-        crc2.fillStyle = "black";
-        crc2.fill();
-        crc2.closePath();
-        crc2.restore();
-
-        //Fußunten
-        crc2.save();
-        crc2.translate(980, 520);
-        crc2.beginPath();
-        crc2.moveTo(0, 0);
-        crc2.lineTo(8, 0);
-        crc2.fillStyle = "black";
-        crc2.stroke();
-        crc2.closePath();
-        crc2.restore();
-
-        //Fußunten
-        crc2.save();
-        crc2.translate(985, 522);
-        crc2.beginPath();
-        crc2.moveTo(0, 0);
-        crc2.lineTo(8, 0);
-        crc2.fillStyle = "black";
-        crc2.stroke();
-        crc2.closePath();
-        crc2.restore();
-
-        //flügel
-        crc2.save();
-        crc2.translate(981, 510);
-        crc2.rotate(2.8);
-        crc2.beginPath();
-        crc2.moveTo(0, 0);
-        crc2.lineTo(20, 0);
-        crc2.lineTo(23, 4);
-        crc2.lineTo(0, 13);
-        crc2.lineTo(0, 0);
-        crc2.fillStyle = "blue";
-        crc2.fill();
-        crc2.closePath();
-        crc2.restore();
-
+         crc2.save();
+            crc2.scale(1.5, 1);
+            crc2.beginPath();
+            crc2.translate(800, 600);
+            crc2.moveTo(30, 0);
+            crc2.lineTo(300, 0);
+            crc2.lineTo(250, 200);
+            crc2.lineTo(-30, 200);
+            crc2.fillStyle = "grey";
+            crc2.fill();
+            crc2.closePath();
+            crc2.restore();
     }
-
-
-
-    function drawBirdCage(_position: VectorBackground): void {
-        crc2.save();
-        crc2.shadowBlur = 2;
-        crc2.shadowColor = "black";
-        crc2.beginPath();
-        crc2.rect(995, 550, 10, 100);
-        crc2.closePath();
-        crc2.fillStyle = "#8B4513";
-        crc2.fill();
-        crc2.restore();
-
-        crc2.save();
-        crc2.shadowBlur = 2;
-        crc2.shadowColor = "black";
-        crc2.beginPath();   
-        crc2.rect(950, 450, 100, 100);
-        crc2.closePath();
-        crc2.fillStyle = "#8B4513";
-        crc2.fill();
-        crc2.restore();
-
-        crc2.save();
-        crc2.shadowBlur = 2;
-        crc2.shadowColor = "black";
-        crc2.beginPath();
-        crc2.arc(1000, 490, 20, 0, 2 * Math.PI);
-        crc2.closePath();
-        crc2.fillStyle = "#33140A";
-        crc2.fill();
-        crc2.restore();
-
-        crc2.save();
-        crc2.shadowBlur = 2;
-        crc2.shadowColor = "black";
-        crc2.beginPath();
-        crc2.moveTo(1060, 450);
-        crc2.lineTo(940, 450);
-        crc2.lineTo(1000, 380);
-        crc2.closePath();
-        crc2.fillStyle = "#33140A";
-        crc2.fill();
-        crc2.restore();
-
-        crc2.save();
-        crc2.shadowBlur = 2;
-        crc2.shadowColor = "black";
-        crc2.beginPath();
-        crc2.rect(960, 520, 80, 10);
-        crc2.closePath();
-        crc2.fillStyle = "#33140A";
-        crc2.fill();
-        crc2.restore();
-
-    }
-
-    function drawSnowman(_positionBot: VectorBackground, _positionMid: VectorBackground, _positionTop: VectorBackground): void {
-        let r1: number = 50;
-        let r2: number = 40;
-        let r3: number = 30;
-
-        crc2.save();
-        crc2.shadowBlur = 2;
-        crc2.shadowColor = "lightgray";
-        crc2.translate(_positionBot.x, _positionBot.y);
-        crc2.beginPath();
-        crc2.arc(0, 0, r1, 0, 2 * Math.PI);
-        crc2.fillStyle = "white";
-        crc2.fill();
-        crc2.closePath();
-        crc2.restore();
-
-        crc2.save();
-        crc2.shadowBlur = 2;
-        crc2.shadowColor = "lightgray";
-        crc2.translate(_positionMid.x, _positionMid.y);
-        crc2.beginPath();
-        crc2.arc(0, 0, r2, 0, 2 * Math.PI);
-        crc2.fillStyle = "white";
-        crc2.fill();
-        crc2.closePath();
-        crc2.restore();
-
-        crc2.save();
-        crc2.shadowBlur = 2;
-        crc2.shadowColor = "lightgray";
-        crc2.translate(_positionTop.x, _positionTop.y);
-        crc2.beginPath();
-        crc2.arc(0, 0, r3, 0, 2 * Math.PI);
-        crc2.fillStyle = "white";
-        crc2.fill();
-        crc2.closePath();
-        crc2.restore();
-
-        crc2.save();
-        crc2.translate(200, 453);
-        crc2.beginPath();
-        crc2.bezierCurveTo(-10, 10, 0, 20, 10, 10);
-        crc2.stroke();
-        crc2.closePath();
-        crc2.restore();
-
-        crc2.save();
-        crc2.translate(_positionTop.x, _positionTop.y);
-        crc2.beginPath();
-        crc2.arc(8, -10, 2, 0, 2 * Math.PI);
-        crc2.fillStyle = "black";
-        crc2.fill();
-        crc2.closePath();
-        crc2.restore();
-
-
-        crc2.save();
-        crc2.translate(_positionTop.x, _positionTop.y);
-        crc2.beginPath();
-        crc2.arc(-8, -10, 2, 0, 2 * Math.PI);
-        crc2.fillStyle = "black";
-        crc2.fill();
-        crc2.closePath();
-        crc2.restore();
-
-        crc2.save();
-        crc2.translate(_positionMid.x, _positionMid.y);
-        crc2.beginPath();
-        crc2.arc(0, -20, 2, 0, 2 * Math.PI);
-        crc2.fillStyle = "black";
-        crc2.fill();
-        crc2.closePath();
-        crc2.restore();
-
-
-        crc2.save();
-        crc2.translate(_positionMid.x, _positionMid.y);
-        crc2.beginPath();
-        crc2.arc(0, 10, 2, 0, 2 * Math.PI);
-        crc2.fillStyle = "black";
-        crc2.fill();
-        crc2.closePath();
-        crc2.restore();
-
-        crc2.save();
-        crc2.translate(_positionMid.x, _positionMid.y);
-        crc2.beginPath();
-        crc2.arc(0, 50, 2, 0, 2 * Math.PI);
-        crc2.fillStyle = "black";
-        crc2.fill();
-        crc2.closePath();
-        crc2.restore();
-
-        crc2.save();
-        crc2.translate(_positionMid.x, _positionMid.y);
-        crc2.beginPath();
-        crc2.arc(0, 50, 2, 0, 2 * Math.PI);
-        crc2.fillStyle = "black";
-        crc2.fill();
-        crc2.closePath();
-        crc2.restore();
-
-        crc2.save();
-        crc2.shadowBlur = 2;
-        crc2.shadowColor = "lightgray";
-        crc2.beginPath();
-        crc2.moveTo(160, 520);
-        crc2.lineTo(130, 480);
-        crc2.stroke();
-        crc2.closePath();
-        crc2.restore();
-
-        crc2.save();
-        crc2.shadowBlur = 5;
-        crc2.shadowColor = "lightgray";
-        crc2.beginPath();
-        crc2.moveTo(240, 520);
-        crc2.lineTo(270, 480);
-        crc2.stroke();
-        crc2.closePath();
-        crc2.restore();
-    }
+}
+      
 
     function drawBackground(): void {
         console.log("Background");
 
         let gradient: CanvasGradient = crc2.createLinearGradient(0, 0, 0, crc2.canvas.height);
         gradient.addColorStop(0, "lightblue");
-        gradient.addColorStop(golden, "white");
-        gradient.addColorStop(1, "lightgray");
+        gradient.addColorStop(0.5, "white");
+        gradient.addColorStop(1, "green");
 
         crc2.fillStyle = gradient;
         crc2.fillRect(0, 0, crc2.canvas.width, crc2.canvas.height);
@@ -498,27 +259,4 @@ namespace A082 {
         crc2.restore();
     }
 
-}
-
-
-
-
-
-function drawLandingfield(_position: VectorBackground): void{
-    let canvas: HTMLCanvasElement | null = document.querySelector("canvas");
-    for (let index: number = 0; index < 7; index++) {
-
-     crc2.save();
-        crc2.scale(1.5, 1);
-        crc2.beginPath();
-        crc2.translate(800, 600);
-        crc2.moveTo(30, 0);
-        crc2.lineTo(300, 0);
-        crc2.lineTo(250, 200);
-        crc2.lineTo(-30, 200);
-        crc2.fillStyle = "grey";
-        crc2.fill();
-        crc2.closePath();
-        crc2.restore();
-}
 }
