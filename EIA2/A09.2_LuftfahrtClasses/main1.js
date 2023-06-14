@@ -343,6 +343,8 @@ var L092_LuftfahrtClasses;
     }
     //Windsack
     function drawWindsock(_position) {
+        crc2.save();
+        crc2.translate(_position.x, _position.y);
         //Stab
         crc2.beginPath();
         crc2.fillStyle = "#46230a";
