@@ -20,7 +20,7 @@ namespace L102_LuftfahrtPolymorphy {
      }
 
      move(_timeslice: number): void {
-        super.move(0.01);
+        super.move(0.002);
     }  
 
    

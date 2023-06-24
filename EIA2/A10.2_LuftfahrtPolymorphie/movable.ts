@@ -20,6 +20,7 @@ namespace L102_LuftfahrtPolymorphy {
     
     move(_timeslice: number): void {
        // console.log("Bugs move");
+       
         
     let canvas: HTMLCanvasElement = document.querySelector("canvas");
        let crc2: CanvasRenderingContext2D = canvas.getContext("2d");

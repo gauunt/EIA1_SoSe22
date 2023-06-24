@@ -14,7 +14,7 @@ var L102_LuftfahrtPolymorphy;
             this.size = _size;
         }
         move(_timeslice) {
-            super.move(0.01);
+            super.move(0.002);
         }
         draw() {
             console.log("Ballon draw");
